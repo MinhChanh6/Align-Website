@@ -1,0 +1,35 @@
+$breakpoint-up: (
+    // >=640px
+    "medium": "40rem",
+    // >=1024px
+    "large": "64rem",
+    // >=1400px,
+    "xlarge": "87.5rem" 
+);
+
+$breakpoint-down: (
+    // <=639px
+    "small": "39.9375rem",
+    // <=1023px
+    "medium": "63.9375rem",
+    // <= 1399px
+    "xlarge": "87.4375rem",
+    // <=540px
+    "small-mobile": "33.75rem",
+    //Iphone6/7/8Plus Down
+    "iphone6-down": "26.25rem",
+    // <= 360px
+    "tiny-mobile": "23.75rem"
+);
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoint-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoint-down, $size)) {
+        @content;
+    }
+}
