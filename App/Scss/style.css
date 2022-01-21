@@ -33,7 +33,7 @@ html {
 
 body {
   line-height: 1;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -50,8 +50,6 @@ textarea {
 textarea:focus,
 input:focus {
   outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 
@@ -61,7 +59,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -101,8 +99,21 @@ button {
   margin: 0 auto;
 }
 
+canvas {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: -99;
+}
+
 .header {
-  padding-top: 53px;
+  position: fixed;
+  top: 53px;
+  right: 0;
+  left: 0;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .nav {
@@ -114,11 +125,13 @@ button {
 }
 
 .burger {
+  display: inline-block;
   width: 25px;
   height: 25px;
   position: relative;
   cursor: pointer;
 }
+
 .burger > span {
   position: absolute;
   background-color: #000000;
@@ -126,21 +139,54 @@ button {
   height: 2px;
   border-radius: 10px;
 }
+
+.burger > span::after {
+  left: 0;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+  background-color: #F5A53B;
+}
+
+.burger > span:nth-child(1)::after {
+  transition-delay: 0.0s;
+}
+
+.burger > span:nth-child(2)::after {
+  transition-delay: 0.1s;
+}
+
+.burger > span:nth-child(3)::after {
+  transition-delay: 0.2s;
+}
+
 .burger > span:nth-child(2) {
   top: 6px;
 }
+
 .burger > span:nth-child(3) {
   top: 12px;
 }
 
+.burger:hover > span::after {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+}
+
 .menu {
-  position: absolute;
+  position: fixed;
   height: 100%;
   top: 0;
-  right: 0;
+  right: -100%;
   width: calc(100%*6/12);
   display: flex;
+  transition: all 0.5s linear;
 }
+
 .menu-black {
   background-color: #000000;
   width: 55%;
@@ -148,9 +194,11 @@ button {
   align-items: center;
   justify-content: center;
 }
+
 .menu-black__wrap {
   padding: 115px 0 120px 0;
 }
+
 .menu-black__close {
   width: 60px;
   height: 60px;
@@ -158,8 +206,9 @@ button {
   cursor: pointer;
   background-color: transparent;
   border-radius: 100rem;
-  transition: all 0.3s linear;
+  transition: all 0.5s linear;
 }
+
 .menu-black__close > span {
   display: block;
   background-color: #FFFFFF;
@@ -169,31 +218,39 @@ button {
   top: 28px;
   right: 13px;
 }
+
 .menu-black__close > span:nth-child(1) {
   transform: rotate(45deg);
 }
+
 .menu-black__close > span:nth-child(2) {
   transform: rotate(-45deg);
 }
+
 .menu-black__close:hover {
   background-color: #FFFFFF;
 }
+
 .menu-black__close:hover > span {
   background-color: #000000;
 }
+
 .menu-black__list {
   display: flex;
   flex-direction: column;
 }
+
 .menu-black__item {
   margin-top: 80px;
 }
+
 .menu-black__link {
   display: inline-block;
   overflow: hidden;
   position: relative;
   line-height: 1.2;
 }
+
 .menu-black__link > span {
   display: block;
   color: #FFFFFF;
@@ -201,14 +258,17 @@ button {
   text-align: left;
   transition: top 0.7s cubic-bezier(0.82, 0, 0.36, 1);
 }
+
 .menu-black__link > span:nth-child(1) {
   position: relative;
   top: 0;
 }
+
 .menu-black__link > span:nth-child(2) {
   position: absolute;
   top: 60px;
 }
+
 .menu-grey {
   width: 45%;
   background-color: #333333;
@@ -218,30 +278,38 @@ button {
   flex-direction: column;
   padding: 195px 0 120px 0;
 }
+
 .menu-grey__wrap {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
 }
+
 .menu-grey__wrap > svg {
+  cursor: pointer;
   margin-bottom: 20px;
 }
+
 .menu-grey__info > p {
   margin-bottom: 20px;
 }
+
 .menu-grey__info > p, .menu-grey__info a {
   font-size: 22.87px;
   color: #FFFFFF;
 }
+
 .menu-grey__social {
   margin-top: auto;
 }
+
 .menu-grey__social > a {
   font-size: 22.87px;
   color: #FFFFFF;
   display: block;
 }
+
 .menu-grey__social > a:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -255,12 +323,9 @@ button {
 }
 
 #circle {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 0;
-  transition: all 0.3s linear;
+  stroke-dasharray: 364px;
+  stroke-dashoffset: 364px;
+  transition: all 0.5s linear;
   transform-origin: 0px 0px 0px;
 }
-
-svg:hover #circle {
-  stroke-dashoffset: 200px;
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
