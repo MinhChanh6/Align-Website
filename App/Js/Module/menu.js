@@ -1,4 +1,4 @@
-export default function handleMenu () {
+export default function handleMenu() {
     const menuTimeLine = gsap.timeline();
 
     const menuItems = document.querySelectorAll('.menu-black__item');
@@ -10,33 +10,33 @@ export default function handleMenu () {
     const svgArrow = document.getElementById('arrow');
 
     menuTimeLine.set(svgIcon, {
-        duration: 1,
+        duration: 0.25,
         strokeDashoffset: "0",
         ease: 'expo.inOut',
-    },"=0.75")
+    }, "=0.75")
 
     menuTimeLine.fromTo(svgArrow, {
         opacity: 0
-    }, {opacity: 1}, "-=0.25")
+    }, { opacity: 1 }, "-=0.25")
 
     menuTimeLine.to(menu, {
         right: '0'
-    }, "-=1.5")
+    }, "-=1.75")
 
     menuTimeLine.from(menuSocialItems, {
-        duration: 0.5,
+        duration: 0.25,
         opacity: 0,
         y: 10,
-        stagger: 0.1,
+        stagger: 0.075,
         ease: 'expo.inOut',
     }, "-=0.75");
 
 
     menuTimeLine.from(menuItems, {
-        duration: 1,
+        duration: 0.5,
         opacity: 0,
         y: 20,
-        stagger: 0.2,
+        stagger: 0.05,
         ease: 'expo.inOut',
     }, "-=1");
 

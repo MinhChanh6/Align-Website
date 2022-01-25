@@ -24,10 +24,12 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html{
-	scroll-behavior: smooth;
     font-size: 62.5%;
+	cursor: none;
 }
 body {
+	background-color: #F7F7F7;
+	overflow-x: hidden;
 	line-height: 1;
 	font-family: 'Saira', sans-serif;
 	margin: 0;

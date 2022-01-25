@@ -1,0 +1,139 @@
+
+.project {
+    padding: 12.4rem 0;
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(3,1fr);
+        height: 1189px;
+        grid-gap: 20px 24px;
+        padding-bottom: 13rem;
+    }
+
+    &-title {
+        padding-bottom: 50px;
+        font-size: 7.2rem;
+        font-weight: 400;
+    }
+
+    &-overlay {
+        opacity: 0;
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        transform-origin: left;
+        transition: all .3s linear;
+        background-color: $yellow;
+        z-index: 9;
+
+        &__wrap {
+            padding-left: 10%;
+            padding-top: 10%;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 15%);
+        }
+
+        &__field {
+            font-size: 2.4rem;
+        }
+
+        &__bottom {
+            margin-top: auto;
+            font-size: 2.4rem;
+        }
+
+
+
+        &__title {
+            font-size: 3.6rem;
+            padding-bottom: 1.6rem;
+        }
+    }
+    &-item {
+        position: relative;
+        z-index: 2;
+    }
+    &-item:hover .project-overlay{
+        width: 50%;
+        opacity: 1;
+        transition: all .3s linear;
+    }
+    &-item:nth-child(1) {
+        position: relative;
+        grid-column: 1/9;
+        grid-row: 1/3;
+        background: url('/Images/ProjectOne.png') no-repeat center center;
+        object-fit: cover;
+        background-size: 100% 100%;
+    }
+    &-item:nth-child(2) {
+        background: url('/Images/ProjectTwo.png') no-repeat center center;
+        object-fit: cover;
+        background-size: 100% 100%;
+        grid-column: 9/13;
+        grid-row: 1/2;
+    }
+    &-item:nth-child(3) {
+        background: url('/Images/ProjectThree.png') no-repeat center center;
+        background-size: 100% 100%;
+        object-fit: cover;
+        grid-column: 9/13;
+        grid-row: 2/3;
+    }
+    &-item:nth-child(4){
+        grid-column: 1/5;
+        background: url('/Images/ProjectFive.png') no-repeat center center;
+        background-size: 100% 100%;
+        object-fit: cover;
+    }
+    &-item:nth-child(5){
+        grid-column: 5/9;
+        background: url('/Images/ProjectFour.png') no-repeat center center;
+        background-size: 100% 100%;
+        object-fit: cover;
+    }
+    &-item:nth-child(6){
+        grid-column: 9/13;
+        background: url('/Images/ProjectSix.png') no-repeat center center;
+        background-size: 100% 100%;
+        object-fit: cover;
+    }
+    &-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+}
+
+.title-small {
+    font-size: 3.2rem;
+}
+
+.branding-item:nth-child(1){
+    background: url('/Images/BrandingOne.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.branding-item:nth-child(2){
+    background: url('/Images/BrandingTwo.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.branding-item:nth-child(3){
+    background: url('/Images/BrandingThree.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.branding-item:nth-child(4){
+    background: url('/Images/BrandingFour.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.branding-item:nth-child(5){
+    background: url('/Images/BrandingFive.png') no-repeat center center;
+    background-size: 100% 100%;
+}
+.branding-item:nth-child(6){
+    background: url('/Images/BrandingSix.png') no-repeat center center;
+    background-size: 100% 100%;
+}
