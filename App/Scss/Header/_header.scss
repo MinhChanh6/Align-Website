@@ -6,7 +6,16 @@
     max-width: 1800px;
     margin: 0 auto;
     padding: 0 15px;
-    z-index: 9999;
+    z-index: 99;
+
+    
+    @include breakpoint-down(medium) {
+        top: 24px;
+    }
+
+    @include breakpoint-down(small) {
+        top: 14px;
+    }
 }
 .nav {
     width: 100%;
@@ -15,7 +24,11 @@
     align-items: center;
     position: relative;
 }
-
+.logo > img{
+    @include breakpoint-down(small) {
+        max-width: 55px;
+    }
+}
 .burger {
     display: inline-block;
     width: 25px;
@@ -67,3 +80,4 @@
         transform: scale3d(1, 1, 1);
     }
 }
+

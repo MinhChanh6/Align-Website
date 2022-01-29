@@ -19,7 +19,7 @@ export default function handleMenu() {
         opacity: 0
     }, { opacity: 1 }, "-=0.25")
 
-    menuTimeLine.to(menu, {
+    menuTimeLine.to(menu, 0.25, {
         right: '0'
     }, "-=1.75")
 
@@ -51,4 +51,6 @@ export default function handleMenu() {
     }
     burgerMenuClose.addEventListener('click', handleOpenMenu);
     burgerMenu.addEventListener('click', handleOpenMenu);
+
+
 }

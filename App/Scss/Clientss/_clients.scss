@@ -1,0 +1,212 @@
+.clients {
+    padding-top: 13rem;
+    padding-bottom: 18.7rem;
+    &-title {
+        font-size: 9.6rem;
+        padding-bottom: 10rem;
+        color: $black;
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        &__heading {
+            font-size: 2.4rem;
+            color: $black;
+        }
+        &__icon {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100%*9/12);
+        }
+    }
+}
+.line {
+    margin-top: 40px;
+    margin-bottom: 111px;
+    width: 0%;
+    height: 2px;
+    background-color: $black;
+}
+
+.reviews {
+    padding-top: 10rem;
+
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-info {
+        width: calc(100%*6/12);
+    }
+
+    &-personal {
+        display: flex;
+        height: 60%;
+        padding-bottom: 4.8rem;
+        > img {
+            width: 6.2rem;
+            height: 6.2rem;
+            object-fit: cover;
+            margin-right: 3rem;
+        }
+
+        &__text {
+            flex-direction: column;
+            display: flex;
+            height: 100%;
+
+            > p {
+                font-size: 2.4rem;
+
+                &:nth-child(1){
+                    padding-bottom: 10px;
+                }
+                &:nth-child(2) {
+                    padding-bottom: 21px;
+                }
+            }
+
+            > ul {
+                margin-top: auto;
+
+                > li {
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    > img {
+                        width: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+
+        > img {
+            margin-right: 3rem;
+            object-fit: cover;
+        }
+
+        > p {
+            font-size: 2.4rem;
+        }
+    }
+
+    &-quote {
+        font-size: 3.6rem;
+        width: calc(100%*6/12);
+        line-height: 1.2;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1600px){
+    .reviews-quote {
+        font-size: 1.875vw;
+    }
+}
+@include breakpoint-down(medium) {
+    .clients {
+        padding-top: 9rem;
+        padding-bottom: 10rem;
+    }
+    .clients-list__heading {
+        display: none;
+    }
+    .clients-list__icon {
+        width: 100%;
+    }
+    .reviews-personal__text {
+        > p  {
+            font-size: 2rem;
+            &:nth-child(2) {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+@include breakpoint-down(small) {
+    .clients {
+        padding-top: 43px;
+        padding-bottom: 58px;
+        &-title {
+            font-size: 3.6rem;
+            line-height: 120%;
+            padding-bottom: 50px;
+        }
+        &-list {
+            flex-direction: column;
+            padding-bottom: 55px;
+
+            &__heading {
+                display: none;
+            }
+            &__icon {
+                flex-wrap: wrap;
+                width: 100%;
+                align-items: center;
+
+                > li:nth-child(4), li:nth-child(5) {
+                    display: none;
+                }
+
+                > li {
+                    width: calc(100%/3);
+
+                    > img {
+                        width: 85%;
+                    }
+                }
+            }
+        }
+    }
+    .reviews {
+        padding-top: 66px;
+
+        &-flex {
+            flex-direction: column;
+        }
+
+        &-info {
+            width: 100%;
+            padding-bottom: 32px;
+        }
+
+        &-personal__text > p {
+            font-size: 1.4rem;
+            line-height: 130%;
+
+            &:nth-child(1) {
+                padding-bottom: unset;
+            }
+
+        }
+        &-logo {
+            > p {
+                font-size: 1.4rem;
+                line-height: 130%;
+            }
+
+            > img {
+                width: 3.5rem;
+                margin-right: 6rem;
+            }
+        }
+
+        &-quote {
+            font-size: 1.4rem;
+            line-height: 130%;
+            width: 100%;
+        }
+    }
+
+    .line {
+        display: none;
+    }
+}

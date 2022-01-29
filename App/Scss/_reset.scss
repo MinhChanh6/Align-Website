@@ -23,13 +23,19 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+* {
+	box-sizing: border-box;
+}
 html{
+	scroll-behavior: smooth;
     font-size: 62.5%;
 	cursor: none;
+
 }
 body {
-	background-color: #F7F7F7;
+	visibility: hidden;
 	overflow-x: hidden;
+	background-color: #F7F7F7;
 	line-height: 1;
 	font-family: 'Saira', sans-serif;
 	margin: 0;
@@ -48,14 +54,7 @@ input:focus {
     -moz-box-shadow: none;
     box-shadow: none;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -71,6 +70,7 @@ a:focus,
 a:active a:visited {
     text-decoration: none;
     color: inherit;
+	cursor: none;
 }
 ul li {
     list-style: none;

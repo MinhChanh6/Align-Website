@@ -1,0 +1,240 @@
+.footer {
+    height: 100vh;
+    background-color: $yellow;
+
+    > .container {
+        height: 100%;
+    }
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    &-outter {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 115px 0 72px 0;
+    }
+
+    &-heading {
+        display: flex;
+        justify-content: space-between;
+
+        > svg {
+            width: 201px;
+            height: 201px;
+        }
+
+        &__text {
+            max-width: 1053px;
+            font-size: 11rem;
+            line-height: 120%;
+
+            > span {
+                display: inline-block;
+            }
+        }
+    }
+
+    &-bottom {
+        margin-top: auto;
+    }
+
+    &-body {
+        display: flex;
+        padding-bottom: 75px;
+        justify-content: space-between;
+    }
+
+    &-contact {
+        font-size: 2.4rem;
+    }
+    &-gmail {
+        padding-bottom: 13px;
+    }
+    &-times {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+        font-size: 1.8rem;
+    }
+
+    &-usa > div:first-child{
+        padding-bottom: 13px;
+    }
+
+    &-end {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2.4rem;
+    }
+
+    &-social,
+    &-private {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+    }
+
+    &-form {
+        display: flex;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        align-items: center;
+        transition: all .3s linear;
+        > svg {
+            width: 89px;
+            height: 89px;
+        }
+
+        &.active {
+            padding-top: 74px;
+            height: 5rem;
+            opacity: 1;
+            overflow: unset;
+        }
+    }
+    input {
+            margin-right: 32px;
+            width: calc(100% - 39px);
+            padding: 25px 0 20px 39px;
+            outline: none;
+            border-radius: 55px;
+            border: 2.05px solid $black;
+            background-color: transparent;
+
+            &::placeholder {
+                font-size: 2.4rem;
+                color: $black;
+                font-family: 'Saira', sans-serif;
+            }
+        }
+}
+.hover-footer {
+    cursor: none;
+}
+
+@media (min-width: 768px) and (max-width: 1600px){
+    .footer-heading__text {
+        font-size: 5.729166666666667vw;
+    }
+    .footer-contact,
+    .footer-end {
+        font-size: 1.25vw;
+    }
+    .footer-times {
+        font-size: .9375vw;
+    }
+    .footer-heading > svg {
+        width: 10.41666666666667vw;
+        height: 10.41666666666667vw;
+    }
+}
+
+@include breakpoint-down(medium) {
+    .footer {
+
+        &-outter {
+            padding: 85px 0 65px 0;
+        }
+        &-heading {
+            flex-direction: column;
+            &__text {
+                font-size:7rem;
+            }
+
+            > svg {
+                margin-top: 36px;
+                width: 110px;
+                height: 110px;
+            }
+        }
+
+        &-contact,
+        &-end,
+        &-times {
+            font-size: 1.6rem;
+        }
+        &-times {
+            width: 35%;
+        }
+        &-private,
+        &-social {
+            width: 30%;
+        }
+    }
+}
+@include breakpoint-down(small) {
+    .footer {
+
+        &-outter {
+            padding: 63px 0 40px 0;
+        }
+        &-heading {
+
+
+            &__text {
+                font-size: 3.6rem;
+                line-height: 120%;
+            }
+
+            > svg {
+                width: 96px;
+                height: 96px;
+            }
+        }
+        &-body {
+            flex-direction: column;
+            padding-bottom: 40px;
+        }
+        &-times {
+            width: 90%;
+            font-size: 1.4rem;
+        }
+        &-contact{
+            padding-bottom: 22px;
+        }
+        &-end {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &-private {
+            order: 1;
+            width: 100%;
+            display: block;
+            margin-bottom: 22px;
+        }
+        &-policy {
+            margin-bottom: 5px;
+        }
+        &-social {
+            order: 2;
+            margin-bottom: 22px;
+            width: 90%;
+        }
+
+        &-sub {
+            order: 3;
+            
+        }
+
+        &-form {
+            
+            &.active {
+                padding-top: 30px;
+            }
+
+            input {
+                &::placeholder {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

@@ -12,10 +12,14 @@
         line-height: 140%;
         font-weight: 400;
         max-width: 1120px;
+        width: calc(100%*8/12);
         color: $black;
-        > span {
-            color: $yellow;
-        }
+    }
+    &-animation {
+        display: inline-block;
+    }
+    &-orange {
+        color: $yellow;
     }
     &-award {
         display: flex;
@@ -36,6 +40,48 @@
         > img {
             max-width: 73px;
             object-fit: cover;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+    .slogan-text {
+        font-size: 2.5vw;
+    }
+}
+@include breakpoint-down(medium) {
+    .slogan-award__content > h6 {
+        font-size: 1.92rem;
+    }
+}
+@include breakpoint-down(small) {
+    .slogan {
+        padding-top: 2rem;
+
+        &-wrap {
+            flex-direction: column;
+        }
+
+        &-text {
+            font-size: 2rem;
+            line-height: 140%;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-award {
+            width: 100%;
+            justify-content: space-between;
+
+            &__content {
+                font-size: 1.4rem;
+
+                > h6 >  img {
+                    width: 1.2rem;
+                }
+            }
+        }
+        &-logo > img{
+            max-width: 48px;
         }
     }
 }

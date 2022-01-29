@@ -2,14 +2,52 @@ export default function customizeCursor() {
     const cursor = document.querySelector('.cursor');
     const cursorFollow = document.querySelector('.cursor-follow');
     const cursorView = document.querySelector('.cursor-view');
-    const canvas = document.getElementById('canvas1');
     const categoriesItems = document.querySelectorAll('.categories-item');
     const categoriesImg = document.querySelector('.categories-img');
-    const burgerMenu = document.querySelector('.burger');
     const projectItems = document.querySelectorAll('.project-item')
     const serviceHeadings = document.querySelectorAll('.services-item__heading');
+    const hoverFooters = document.querySelectorAll('.hover-footer');
+    const hideCursors = document.querySelectorAll('.hide-cursor');
+    const burgerMenuClose = document.querySelector('.menu-black__close')
+    const menuLinks = document.querySelectorAll('.menu-black__link')
 
 
+    function mouseMove(e) {
+        const { clientX, clientY } = e;
+
+        TweenMax.to(cursor, 0.3, {
+            x: clientX,
+            y: clientY,
+        })
+
+        TweenMax.to(cursorFollow, 0.75, {
+            x: clientX,
+            y: clientY,
+        })
+    }
+
+    hoverFooters.forEach((item) => {
+
+        function handleHoverFooterIn() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 0,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 2,
+            })
+        }
+        function handleHoverFooterOut() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 1,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 1,
+            })
+        }
+
+        item.addEventListener('mouseenter', handleHoverFooterIn)
+        item.addEventListener('mouseleave', handleHoverFooterOut)
+    })
 
     serviceHeadings.forEach((item) => {
         const arrow = item.querySelector('.services-item__arrow > img')
@@ -35,35 +73,8 @@ export default function customizeCursor() {
         item.addEventListener('mouseleave', handleMouseTitleOut)
     })
 
-
-    function mouseMove(e) {
-        const { clientX, clientY } = e;
-
-        TweenMax.to(cursor, 0.3, {
-            x: clientX,
-            y: clientY,
-        })
-
-        TweenMax.to(cursorFollow, 0.75, {
-            x: clientX,
-            y: clientY,
-        })
-    }
-
-
-    function handleMouseCanvasIn() {
-        TweenMax.to([cursor, cursorFollow], 0.3, {
-            opacity: 0,
-        })
-    }
-    function handleMouseCanvasOut() {
-        TweenMax.to([cursor, cursorFollow], 0.3, {
-            opacity: 1,
-        })
-    }
-
     categoriesItems.forEach((item, index) => {
-        item.addEventListener('mouseover', function () {
+        item.addEventListener('mouseenter', function () {
             TweenMax.to(cursor, 0.3, {
                 opacity: 0,
             })
@@ -94,42 +105,73 @@ export default function customizeCursor() {
     })
 
     projectItems.forEach(item => {
+        function handleMouseViewIn() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 0,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                backgroundColor: 'black',
+                mixBlendMode: 'unset',
+                border: '1px solid black',
+                scale: 2.5,
+            })
+
+            TweenMax.set(cursorView, { opacity: 1 })
+        }
+
+        function handleMouseViewOut() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 1,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 1,
+                backgroundColor: '#F7F7F7',
+                mixBlendMode: 'difference',
+                border: '1px solid #F7F7F7',
+            })
+
+            TweenMax.set(cursorView, { opacity: 0 })
+        }
         item.addEventListener('mouseenter', handleMouseViewIn);
         item.addEventListener('mouseleave', handleMouseViewOut);
     })
 
-    function handleMouseViewIn() {
-        TweenMax.to(cursor, 0.3, {
-            opacity: 0,
-        })
-        TweenMax.to(cursorFollow, 0.3, {
-            backgroundColor: 'black',
-            mixBlendMode: 'unset',
-            border: '1px solid black',
-            scale: 2.5,
-        })
+    hideCursors.forEach((item) => {
+        function handleHideMouseIn() {
+            TweenMax.to([cursor, cursorFollow], 0.3, {
+                opacity: 0,
+            })
+        }
+        function handleHideMouseOut() {
+            TweenMax.to([cursor, cursorFollow], 0.3, {
+                opacity: 1,
+            })
+        }
+        item.addEventListener('mouseenter', handleHideMouseIn);
+        item.addEventListener('mouseleave', handleHideMouseOut);
+    })
 
-        TweenMax.set(cursorView, { opacity: 1 })
-    }
+    menuLinks.forEach((item) => {
 
-    function handleMouseViewOut() {
-        TweenMax.to(cursor, 0.3, {
-            opacity: 1,
-        })
-        TweenMax.to(cursorFollow, 0.3, {
-            scale: 1,
-            backgroundColor: '#F7F7F7',
-            mixBlendMode: 'difference',
-            border: '1px solid #F7F7F7',
-        })
+        function handleMenuLinkIn() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 0,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 2,
+            })
+        }
+        function handleMenuLinkOut() {
+            TweenMax.to(cursor, 0.3, {
+                opacity: 1,
+            })
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 1,
+            })
+        }
 
-        TweenMax.set(cursorView, { opacity: 0 })
-    }
-
-
+        item.addEventListener('mouseenter', handleMenuLinkIn)
+        item.addEventListener('mouseleave', handleMenuLinkOut)
+    })
     window.addEventListener('mousemove', mouseMove)
-    canvas.addEventListener('mouseenter', handleMouseCanvasIn);
-    canvas.addEventListener('mouseleave', handleMouseCanvasOut);
-    burgerMenu.addEventListener('mouseenter', handleMouseCanvasIn);
-    burgerMenu.addEventListener('mouseleave', handleMouseCanvasOut);
 }
