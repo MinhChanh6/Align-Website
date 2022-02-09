@@ -1,3 +1,5 @@
+import handleCheckBox from './Module/checkbox.js';
+import handleTabs from './Module/tabs.js';
 import createLoading from './Module/loading.js';
 import handleMenu from './Module/menu.js';
 import createCanvas from './Module/canvas.js';
@@ -8,8 +10,10 @@ import createdMenuIneLine from './Module/menuInline.js';
 import createTimeZone from './Module/timeZone.js';
 import createdActiveForm from './Module/form.js';
 import createdAnimation from './Module/animations.js';
+import createdAutoChangeText from './Module/autoChangeText.js';
 window.addEventListener('DOMContentLoaded', () => {
     gsap.to("body", 0, { css: { visibility: "visible" } });
+    createdAutoChangeText();
     createLoading();
     handleMenu();
     createCanvas();
@@ -20,4 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     createTimeZone();
     createdActiveForm();
     createdAnimation();
+    handleTabs();
+    handleCheckBox();
 });

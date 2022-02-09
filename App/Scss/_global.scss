@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;700&display=swap');
 
+
 .wrapper {
     max-width: 1920px;
     margin: 0 auto;
@@ -121,9 +122,123 @@ canvas {
         font-style: italic;
     }
 }
+.pd20 {
+    padding-bottom: 20px !important;
+}
+.pd0 {
+    padding: unset !important;
+}
+.mt {
+    margin-top: 15rem;
+
+    @include breakpoint-down(small) {
+        margin-top: 10rem;
+    }
+}
+.mr-auto {
+    margin-left: auto;
+}
+.rto-box {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-top: 66.5%;
+
+    > img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        object-fit: cover;
+    }
+}
+.button-type {
+    display: flex;
+    align-items: center;
+
+    > div {
+        border: 1px solid #A5A5A5;
+        font-size: 1.8rem;
+        line-height: 130%;
+        border-radius: 75px;
+        padding: 8px 16px;
+        color: #A5A5A5;
+        @include breakpoint-down(small) {
+            font-size: 1.4rem;
+        }
+        &:nth-child(1){
+            margin-right: 1.6rem;
+        }
+    }
+}
+.wrap-parallax {
+    position: relative;
+    overflow: hidden;
+}
+.image-parallax {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+}
+// .heading-1 {
+//     font-size: 9.6rem;
+// }
+// .heading-2 {
+//     font-size: 7.2rem;
+//     line-height: 130%;
+// }
+// .heading-3 {
+//     font-size: 6.4rem;
+//     line-height: 140%;
+// }
+// .heading-4 {
+//     font-size: 4.8rem;
+//     line-height: 140%;
+// }
+// .heading-5 {
+//     font-size: 3.6rem;
+//     line-height: 140%;
+// }
+// .heading-6 {
+//     font-size: 2.4rem;
+// }
+// .body {
+//     font-size: 2.4rem;
+//     line-height: 130%;
+// }
+// .caption {
+//     font-size: 1.8rem;
+//     line-height: 130%;
+// }
+
 @include breakpoint-down(medium){
     .cursor,
     .cursor-follow {
         display: none;
     }
 }
+
+// @media screen and (min-width: 768px) and (max-width: 1600px){
+//     .heading-1 {
+//         font-size: 5vw;
+//     }
+//     .heading-2 {
+//         font-size: 3.75vw;
+//     }
+//     .heading-4 {
+//         font-size: 2.5vw;
+//     }
+//     .heading-5 {
+//         font-size: 1.875vw;
+//     }
+// }
+
+// @include breakpoint-down(medium) {
+//     .heading-1 {
+//         font-size: 8rem;
+//     }
+//     .heading-2 {
+//         font-size: 4rem;
+//     }
+// }

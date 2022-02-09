@@ -1,0 +1,75 @@
+.about {
+
+    &-title {
+        font-size: 4.8rem;
+        line-height: 140%;
+        max-width: 1120px;
+        margin-bottom: 8rem;
+    }
+    &-parallax {
+        height: 750px;
+        margin-bottom: 9rem;
+    }
+    &-banner {
+        top: -10%;
+    }
+    &-achievements {
+        padding-bottom: 9rem;
+
+        &__flex {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        &__number {
+            font-size: 9.6rem;
+            margin-bottom: 20px;
+        }
+        &__desc {
+            font-size: 2.4rem;
+            line-height: 130%;
+        }
+    }
+}
+
+@include breakpoint-down(medium) {
+    .about {
+        &-quote {
+            padding-top: 0;
+        }
+        &-title {
+            font-size: 3.84rem;
+            line-height: 140%;
+        }
+        &-banner {
+            height: 625px;
+        }
+        &-achievements {
+            &__flex {
+                flex-direction: column;
+            }
+            &__item:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+@include breakpoint-down(small) {
+    .about {
+        margin-top: 10rem;
+        &-title {
+            font-size: 2rem;
+            margin-bottom: 4rem;
+        }
+        &-achievements {
+            &__desc {
+                font-size: 1.4rem;
+            }
+            &__number {
+                font-size: 4.8rem;
+                line-height: 130%;
+                margin-bottom: unset;
+            }
+        }
+    }
+}

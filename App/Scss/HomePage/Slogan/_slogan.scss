@@ -27,8 +27,10 @@
 
         &__content {
             font-size: 2.4rem;
-
+            position: relative;
+            overflow: hidden;
             > h6 {
+                transform: translateY(0);
                 margin-bottom: 10px;
             }
         }

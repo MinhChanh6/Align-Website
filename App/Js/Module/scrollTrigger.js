@@ -26,23 +26,27 @@ export default function createdScrollTrigger() {
 
 
     //Services Section
-    const scrollServices = gsap.timeline({
-        scrollTrigger: {
-            scroller: '.smooth-scroll',
-            trigger: '.services',
-            start: 'top 30%',
-            end: 'bottom 50%',
-            toggleActions: "play none none reverse",
-            onEnter: () => gsap.to(['.services', 'body'], { backgroundColor: '#1500BB' }),
-            onLeave: () => gsap.to(['.services', 'body'], { backgroundColor: '#F7F7F7' }),
-            onLeaveBack: () => gsap.to(['.services', 'body'], { backgroundColor: '#F7F7F7' }),
-            onEnterBack: () => gsap.to(['.services', 'body'], { backgroundColor: '#1500BB' })
-        }
-    })
-    scrollServices.to('.services-item__arrow', { opacity: 1 })
-    scrollServices.to(['.services-title', '.services-item__title', '.services-item__desc'], { color: '#FFFFFF' }, "-=0.5")
-    scrollServices.from('.services-quote > span', 1, { y: 150, opacity: 0, stagger: { amount: 0.2 }, delay: 0.4 })
-    scrollServices.fromTo('.services-symbol', 1.25, { scale: 0 }, { scale: 1 }, "-=1.25")
+    const servicesSection = document.querySelector('.services-section')
+    if (servicesSection) {
+        const scrollServices = gsap.timeline({
+            scrollTrigger: {
+                scroller: '.smooth-scroll',
+                trigger: '.services-section',
+                start: 'top 30%',
+                end: 'bottom 50%',
+                toggleActions: "play none none reverse",
+                onEnter: () => gsap.to(['body'], { backgroundColor: '#1500BB' }),
+                onLeave: () => gsap.to(['body'], { backgroundColor: '#F7F7F7' }),
+                onLeaveBack: () => gsap.to(['body'], { backgroundColor: '#F7F7F7' }),
+                onEnterBack: () => gsap.to(['body'], { backgroundColor: '#1500BB' })
+            }
+        })
+        scrollServices.to('.services-item__arrow', { opacity: 1 })
+        scrollServices.to(['.services-title', '.services-item__title', '.services-item__desc'], { color: '#FFFFFF' }, "-=0.5")
+        scrollServices.from('.services-quote > span', 0.4, { y: 150, opacity: 0, stagger: { amount: 0.2 }, delay: 0.4 })
+        scrollServices.fromTo('.services-symbol', 0.75, { scale: 0 }, { scale: 1 }, "-=0.8")
+    }
+
 
     //Clients Section
     const scrollClients = gsap.timeline({
@@ -53,28 +57,31 @@ export default function createdScrollTrigger() {
             end: 'bottom 30%',
         }
     })
-    scrollClients.to('.line', 0.75, { width: '100%', stagger: 0.25 })
-    scrollClients.from('.clients-list__icon > li > img', 0.3, { opacity: 0, ease: "power4.inOut", stagger: 0.025 }, "-=1.2")
+    scrollClients.to('.line', 0.4, { width: '100%', stagger: 0.25 })
+    scrollClients.from('.clients-list__icon > li > img', 0.3, { opacity: 0, ease: "power4.inOut", stagger: 0.025 }, "-=0.7")
 
     //Slogan Section
-    const scrollSlogan = gsap.timeline({
-        scrollTrigger: {
-            scroller: '.smooth-scroll',
-            trigger: '.slogan',
-            start: 'top 55%',
-        }
-    })
-    scrollSlogan.from('.slogan-animation ', 1, {
-        opacity: 0,
-        y: 80,
-        ease: "Slowmo.easeOut",
-        stagger: {
-            each: 0.15
-        }
-    })
-    scrollSlogan.from(['.slogan-award__content', '.slogan-logo'], 0.7, {
-        opacity: 0
-    }, "-=0.8")
+    const sloganSection = document.querySelector('.slogan')
+    if (sloganSection) {
+        const scrollSlogan = gsap.timeline({
+            scrollTrigger: {
+                scroller: '.smooth-scroll',
+                trigger: '.slogan',
+                start: 'top 55%',
+            }
+        })
+        scrollSlogan.from('.slogan-animation ', 1, {
+            opacity: 0,
+            y: 80,
+            ease: "Slowmo.easeOut",
+            stagger: {
+                each: 0.15
+            }
+        })
+        scrollSlogan.from(['.slogan-award__content', '.slogan-logo'], 0.7, {
+            opacity: 0
+        }, "-=0.8")
+    }
 
     //Project Sections
     const sections = gsap.utils.toArray('.project');
@@ -96,7 +103,7 @@ export default function createdScrollTrigger() {
         scrollProject.from(img, 1, {
             scale: 1.25,
             ease: "Slowmo.easeOut",
-        }, "=-1")
+        }, "=-1.3")
     })
 
     //Insights Section
@@ -112,12 +119,30 @@ export default function createdScrollTrigger() {
         width: '0%',
         stagger: { amount: 0.25 }
     })
-    scrollInSights.from('.insights-item > img', 1, {
+    scrollInSights.from('.insights-wrap > img', 1, {
         scale: 1.25,
         ease: "Slowmo.easeOut",
     }, "=-1.25")
 
-
+    //Parallax Image
+    const parallaxImage = document.querySelector('.wrap-parallax');
+    const blogDetailSection = document.querySelector('.blogDetail')
+    if (parallaxImage) {
+        let parallax = gsap.timeline({
+            scrollTrigger: {
+                trigger: parallaxImage,
+                start: 'top 50%',
+                end: 'bottom 20%',
+                scrub: true
+            }
+        })
+        parallax.from('.image-parallax', {
+            yPercent: -10,
+        })
+        parallax.to('.image-parallax', {
+            yPercent: 10,
+        })
+    }
     //Footer Section 
     const scrollFooter = gsap.timeline({
         scrollTrigger: {
@@ -144,8 +169,16 @@ export default function createdScrollTrigger() {
     scrollFooter.from(['.footer-gmail', '.footer-address', '.footer-times', '.footer-end'], 1.25, { opacity: 0 }, "-=0.3")
 
 
-    ScrollTrigger.addEventListener('refresh', () => scroller.update())
+    const isUpdate = () => {
+        if (scroller) {
+            scroller.update();
+        }
+    };
+    ScrollTrigger.addEventListener('refresh', isUpdate)
 
     ScrollTrigger.refresh()
+
+
+
 
 }

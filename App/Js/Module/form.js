@@ -4,7 +4,6 @@ export default function createdActiveForm() {
     footerSub.addEventListener('click', handleOpenForm)
 
     function handleOpenForm() {
-        console.log('Clicked')
         footerForm.classList.toggle('active')
     }
 }

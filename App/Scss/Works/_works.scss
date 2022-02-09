@@ -1,0 +1,49 @@
+.works {
+    &-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-title {
+        font-size: 9.6rem;
+        line-height: 130%;
+        position: relative;
+        overflow: hidden;
+
+        > span {
+            display: inline-block;
+            transform: translateY(0);
+        }
+    }
+
+    &-words {
+        color: $yellow;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+    .works {
+        &-title {
+            font-size: 5vw;
+            max-width: 1300px;
+        }
+    }
+}
+
+@include breakpoint-down(medium) {
+    .works {
+        &-title {
+            font-size: 4.8rem;
+            max-width: 450px;
+            margin-bottom: 5rem;
+        }
+    }
+}
+@include breakpoint-down(small) {
+    .works {
+        &-heading {
+            flex-direction: column;
+        }
+        &-title {
+            max-width: 280px;
+        }
+    }
+}

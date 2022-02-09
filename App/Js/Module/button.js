@@ -2,7 +2,7 @@ export default function createdMagneticButton() {
     const buttons = document.querySelectorAll('.button');
     const cursor = document.querySelector('.cursor');
     const cursorFollow = document.querySelector('.cursor-follow');
-    let movement = 40;
+    let movement = 25;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     buttons.forEach((button) => {

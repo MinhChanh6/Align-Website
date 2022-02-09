@@ -9,27 +9,28 @@ export default function handleMenu() {
     const svgIcon = document.getElementById('circle');
     const svgArrow = document.getElementById('arrow');
 
+    menuTimeLine.to(menu, 0.2, {
+        right: '0',
+    })
+
+
     menuTimeLine.set(svgIcon, {
-        duration: 0.25,
+        duration: 0.2,
         strokeDashoffset: "0",
         ease: 'expo.inOut',
-    }, "=0.75")
+    }, "=0.2")
 
     menuTimeLine.fromTo(svgArrow, {
         opacity: 0
-    }, { opacity: 1 }, "-=0.25")
-
-    menuTimeLine.to(menu, 0.25, {
-        right: '0'
-    }, "-=1.75")
+    }, { opacity: 1 }, "-=0.2")
 
     menuTimeLine.from(menuSocialItems, {
-        duration: 0.25,
+        duration: 0.2,
         opacity: 0,
         y: 10,
         stagger: 0.075,
         ease: 'expo.inOut',
-    }, "-=0.75");
+    }, "-=0.2");
 
 
     menuTimeLine.from(menuItems, {
@@ -38,12 +39,12 @@ export default function handleMenu() {
         y: 20,
         stagger: 0.05,
         ease: 'expo.inOut',
-    }, "-=1");
+    }, "-=0.3");
 
 
 
 
-    menuTimeLine.reverse(-2);
+    menuTimeLine.reverse();
 
 
     const handleOpenMenu = () => {

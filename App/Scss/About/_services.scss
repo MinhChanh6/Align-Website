@@ -1,0 +1,14 @@
+.about-quote {
+    > span {
+        color: $black;
+
+        &::after {
+            background-color: $black;
+        }
+    }
+}
+.about-symbol {
+    background-color: #FFFFFF;
+    mix-blend-mode: difference;
+    z-index: 2;
+}
