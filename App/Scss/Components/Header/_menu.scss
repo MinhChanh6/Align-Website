@@ -119,9 +119,14 @@
             }
         }
         &__info {
+
+            > a {
+                display: block;
+                margin-bottom: 20px;
+            }
+
             > p {
                 margin-bottom: 20px;
-                
             }
 
             > p, a {
@@ -142,6 +147,66 @@
                 margin-bottom: 20px;
             }
         }
+
+        &__svg {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 1.12px solid $white;
+            width: 48.8px;
+            height: 48.8px;
+            margin-bottom: 20px;
+            z-index: 2;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 110%;
+                height: 0;
+                padding-bottom: 110%;
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                transform: translate3d(-100%,0%,0) scale3d(0,0,1);
+                background-color: $white;
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+                z-index: -1;
+            }
+
+            > svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
+                &::before {
+                    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+                    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+                }
+
+                #arrow-menu {
+                    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+                    transform: translate3d(50%,-50%, 0);
+                }
+
+                #arrow-menu__clone {
+                    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+                    stroke: $black;
+                    transform: translate3d(0%,-0%, 0)   
+                }
+            }
+
+            #arrow-menu,
+            #arror-menu__clone {
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+            }
+            #arrow-menu__clone {
+                position: relative;
+                z-index: 100;
+                transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+                transform: translate3d(-70%,70%,0);
+            }
+        }
     }
 }
 
@@ -152,13 +217,6 @@
     top: 0;
 }
 
-#circle,
-#circle-footer {
-    stroke-dasharray: 364px;
-    stroke-dashoffset: 364px;
-    transition: $transition;
-    transform-origin: 0px 0px 0px;
-}
 
 @media (min-width: 1920px) {
     .menu-black__wrap {

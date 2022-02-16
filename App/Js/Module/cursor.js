@@ -15,12 +15,7 @@ export default function customizeCursor() {
     function mouseMove(e) {
         const { clientX, clientY } = e;
 
-        TweenMax.to(cursor, 0.3, {
-            x: clientX,
-            y: clientY,
-        })
-
-        TweenMax.to(cursorFollow, 0.75, {
+        TweenMax.to(cursorFollow, 0.45, {
             x: clientX,
             y: clientY,
         })
@@ -55,15 +50,15 @@ export default function customizeCursor() {
         function handleMouseTitleIn() {
 
             arrow.classList.add('active')
-            TweenMax.to([cursor, cursorFollow], 0.3, {
+            TweenMax.to(cursorFollow, 0.3, {
                 scale: 0,
             })
 
             TweenMax.to(arrow, 0.3, { scale: 0.7 })
         }
         function handleMouseTitleOut() {
-            TweenMax.to([cursor, cursorFollow], 0.3, {
-                scale: 1,
+            TweenMax.to(cursorFollow, 0.3, {
+                scale: 0.8,
             })
 
             TweenMax.to(arrow, 0.3, { scale: 1 })
@@ -76,9 +71,6 @@ export default function customizeCursor() {
     categoriesItems.forEach((item, index) => {
         item.addEventListener('mouseenter', function (e) {
             let imageSrc = e.target.dataset.src;
-            TweenMax.to(cursor, 0.3, {
-                opacity: 0,
-            })
             TweenMax.to(cursorFollow, 0.3, {
                 scale: 3,
             })
@@ -92,11 +84,8 @@ export default function customizeCursor() {
         })
 
         item.addEventListener('mouseleave', function () {
-            TweenMax.to(cursor, 0.3, {
-                opacity: 1,
-            })
             TweenMax.to(cursorFollow, 0.3, {
-                scale: 1,
+                scale: 0.8,
             })
             categoriesImg.style.zIndex = "-1";
             TweenMax.to('.categories-img', { autoAlpha: 0 })
@@ -106,9 +95,6 @@ export default function customizeCursor() {
 
     projectItems.forEach(item => {
         function handleMouseViewIn() {
-            TweenMax.to(cursor, 0.3, {
-                opacity: 0,
-            })
             TweenMax.to(cursorFollow, 0.3, {
                 backgroundColor: 'black',
                 mixBlendMode: 'unset',
@@ -120,11 +106,8 @@ export default function customizeCursor() {
         }
 
         function handleMouseViewOut() {
-            TweenMax.to(cursor, 0.3, {
-                opacity: 1,
-            })
             TweenMax.to(cursorFollow, 0.3, {
-                scale: 1,
+                scale: 0.8,
                 backgroundColor: '#F7F7F7',
                 mixBlendMode: 'difference',
                 border: '1px solid #F7F7F7',
@@ -139,11 +122,11 @@ export default function customizeCursor() {
     hideCursors.forEach((item) => {
         function handleHideCursors(e) {
             if (e.type === 'mouseenter') {
-                TweenMax.to([cursor, cursorFollow], 0.3, {
+                TweenMax.to(cursorFollow, 0.3, {
                     opacity: 0,
                 })
             } else if (e.type === 'mouseleave') {
-                TweenMax.to([cursor, cursorFollow], 0.3, {
+                TweenMax.to(cursorFollow, 0.3, {
                     opacity: 1,
                 })
             }
@@ -155,18 +138,12 @@ export default function customizeCursor() {
 
         function handleMenuLink(e) {
             if (e.type === 'mouseenter') {
-                TweenMax.to(cursor, 0.3, {
-                    opacity: 0,
-                })
                 TweenMax.to(cursorFollow, 0.3, {
                     scale: 2,
                 })
             } else if (e.type === 'mouseleave') {
-                TweenMax.to(cursor, 0.3, {
-                    opacity: 1,
-                })
                 TweenMax.to(cursorFollow, 0.3, {
-                    scale: 1,
+                    scale: 0.8,
                 })
             }
         }

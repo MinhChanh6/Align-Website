@@ -1,6 +1,10 @@
 export default function createdAnimation() {
+
     const categoriesItems = document.querySelectorAll('.categories-item');
     const worksSlogan = document.querySelector('.works-slogan')
+    const aboutTitle = document.querySelector('.about-title')
+
+
 
     if (categoriesItems) {
         const introHomeTimeline = gsap.timeline({ delay: 1.85 });
@@ -27,5 +31,9 @@ export default function createdAnimation() {
             y: '100%'
         }, "-=0.55")
     }
-
+    if (aboutTitle) {
+        const introAboutTimeline = gsap.timeline({ delay: 1.85 });
+        const words = document.querySelectorAll('.word')
+        introAboutTimeline.from(words, { duration: 0.5, opacity: 0, stagger: 0.02, ease: "power1.inOut" }, "=1.85");
+    }
 }

@@ -1,18 +1,39 @@
 .contact {
     margin-bottom: 17.2rem;
 
+    @include breakpoint-down(medium) {
+        margin-bottom: 8rem;
+    }
     &-heading {
         font-size: 9.6rem;
         margin-bottom: 5rem;
         max-width: 1200px;
+
+        @include breakpoint-down(small) {
+            font-size: 4.8rem;
+            line-height: 130%;
+            margin-bottom: 4rem;
+        }
     }
     &-title {
         font-size: 6.4rem;
         line-height: 130%;
         margin-bottom: 5rem;
+
+        @include breakpoint-down(small) {
+            font-size: 2.4rem;
+            margin-bottom: 4rem;
+        }
     }
     &-tags {
         margin-bottom: 11.8rem;
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 8rem;
+        }
+        @include breakpoint-down(small) {
+            margin-bottom: 4rem;
+        }
         > ul {
             li {
                 display: inline-block;
@@ -27,9 +48,19 @@
                 &:not(:last-child) {
                     margin-right: 4.6rem;
                     margin-bottom: 2.8rem;
+
+                    @include breakpoint-down(small) {
+                        margin-right: 18px;
+                        margin-bottom: 16px;
+                    }
                 }
                 > a {
                     font-size: 2.4rem;
+
+                    @include breakpoint-down(small) {
+                        font-size: 1.6rem;
+                        line-height: 130%;
+                    }
                 }
             }
         }
@@ -46,6 +77,15 @@
                     font-size: 3.6rem;
                     line-height: 140%;
                     color: $darkGrey;
+
+                    @include breakpoint-down(medium) {
+                        font-size: 2.8rem;
+                    }
+
+                    @include breakpoint-down(small) {
+                        font-size: 1.8rem;
+                        line-height: 140%;
+                    }
                 }
             }
             > input {
@@ -59,7 +99,9 @@
         width: 50%;
         border-bottom: 1px solid $darkGrey;
         margin-bottom: 21px;
-
+        @include breakpoint-down(medium) {
+            width: 100%;
+        }
         > input {
             background-color: transparent;
             border: none;
@@ -71,6 +113,15 @@
                 font-family: 'Saira', sans-serif;
                 font-size: 3.6rem;
                 line-height: 130%;
+
+                @include breakpoint-down(medium) {
+                    font-size: 2.8rem;
+                }
+
+                @include breakpoint-down(small) {
+                    font-size: 1.8rem;
+                    line-height: 140%;
+                }
             }
         }
 
@@ -83,6 +134,15 @@
                 font-family: 'Saira', sans-serif;
                 font-size: 3.6rem;
                 line-height: 130%;
+
+                @include breakpoint-down(medium) {
+                    font-size: 2.8rem;
+                }
+
+                @include breakpoint-down(small) {
+                    font-size: 1.8rem;
+                    line-height: 140%;
+                }
             }
         }
     }
@@ -91,21 +151,35 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 13.5rem;
+
+        @include breakpoint-down(medium) {
+            display: block;
+            margin-bottom: 5rem;
+        }
+
+        @include breakpoint-down(small) {
+            margin-top: 6rem;
+            margin-bottom: 4rem;
+        }
     }
     &-price {
-        width: 30%;
+        width: 40%;
+
+        @include breakpoint-down(medium) {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
     }
     &-timeline{
         width: 60%;
+
+        @include breakpoint-down(medium) {
+            width: 100%;
+        }
     }
     &-checkbox {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
         &__group {
-            margin-bottom: 100px;
+            display: inline-block;
             > input {
                 height: 0;
                 width: 0;
@@ -117,6 +191,9 @@
                 padding: 16px 32px;
                 font-size: 2.4rem;
 
+                @include breakpoint-down(small) {
+                    font-size: 1.6rem;
+                }
                 &:hover {
                     background-color: $black;
                     color: $white;
@@ -129,6 +206,12 @@
                 color: $white;
                 transition: all .3s linear;
             }
+
+            &:not(:last-child) {
+                margin-right: 25px;
+                margin-bottom: 75px;
+
+            }
         }
     }
     &-button {
@@ -136,6 +219,10 @@
         line-height: 130%;
         text-decoration: underline;
         text-decoration-thickness: 3px;
+
+        @include breakpoint-down(small) {
+            font-size: 2.4rem;
+        }
     }
 }
 
@@ -147,5 +234,24 @@
         &-title {
             font-size: 3.3vw;
         }
+    }
+}
+
+.contact-price > .contact-checkbox > .contact-checkbox__group  > label {
+    @include breakpoint-down(medium) {
+        display: inline-block;
+        width: 100%;
+        padding: 23px 32px;
+        text-align: center;
+    }
+}
+.contact-price > .contact-checkbox > .contact-checkbox__group {
+    @include breakpoint-down(medium) {
+        width: 100%;
+    }
+}
+.contact-price > .contact-checkbox > .contact-checkbox__group:not(:last-child) {
+    @include breakpoint-down(medium) {
+        margin-bottom: 20px;
     }
 }

@@ -5,47 +5,36 @@ export default function handleMenu() {
     const menuSocialItems = document.querySelectorAll('.menu-grey__social > a')
     const burgerMenu = document.querySelector('.burger')
     const burgerMenuClose = document.querySelector('.menu-black__close')
+    const popupForm = document.querySelector('.popup')
+    const formClose = document.querySelector('.popup-wrap > div > .contact-close')
+
     const menu = document.querySelector('.menu')
     const svgIcon = document.getElementById('circle');
     const svgArrow = document.getElementById('arrow');
 
-    menuTimeLine.to(menu, 0.2, {
+    menuTimeLine.to(menu, 0.12, {
         right: '0',
     })
 
 
-    menuTimeLine.set(svgIcon, {
-        duration: 0.2,
-        strokeDashoffset: "0",
-        ease: 'expo.inOut',
-    }, "=0.2")
-
-    menuTimeLine.fromTo(svgArrow, {
-        opacity: 0
-    }, { opacity: 1 }, "-=0.2")
-
     menuTimeLine.from(menuSocialItems, {
         duration: 0.2,
         opacity: 0,
-        y: 10,
-        stagger: 0.075,
-        ease: 'expo.inOut',
     }, "-=0.2");
 
 
     menuTimeLine.from(menuItems, {
-        duration: 0.5,
+        duration: 0.3,
         opacity: 0,
-        y: 20,
+        y: 10,
         stagger: 0.05,
         ease: 'expo.inOut',
-    }, "-=0.3");
+    }, "=0.15");
 
 
 
 
-    menuTimeLine.reverse();
-
+    menuTimeLine.reverse(-2);
 
     const handleOpenMenu = () => {
         menuTimeLine.reversed(!menuTimeLine.reversed());

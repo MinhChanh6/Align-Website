@@ -56,7 +56,6 @@
 }
 @include breakpoint-down(small) {
     .about {
-        margin-top: 10rem;
         &-title {
             font-size: 2rem;
             margin-bottom: 4rem;

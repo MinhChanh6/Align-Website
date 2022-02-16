@@ -110,6 +110,7 @@
         }
     }
     &-item {
+        display: none;
         &:hover {
             > .rto-box > img {
                 transform: scale(1.2);
@@ -121,6 +122,12 @@
         }
         > .rto-box > img {
             transition: transform .2s linear;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            display: block;
         }
     }
     &-title {

@@ -1,10 +1,13 @@
+import { scroller } from "./locomotiveSroll.js";
 export default function handleTabs() {
     const tags = document.querySelectorAll('[data-tab-target]');
     const tagsContent = document.querySelectorAll('[data-tab-content]')
     tags.forEach(tag => {
         tag.addEventListener('click', () => {
             const target = document.querySelector(tag.dataset.tabTarget)
-            console.log(target)
+
+            if (!target) return;
+
             tagsContent.forEach(tagContent => {
                 tagContent.classList.remove('active')
             })
@@ -13,6 +16,8 @@ export default function handleTabs() {
             })
             tag.classList.add('active')
             target.classList.add('active');
+
+            scroller.update();
         })
     })
 }

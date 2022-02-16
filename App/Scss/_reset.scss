@@ -27,19 +27,23 @@ footer, header, hgroup, menu, nav, section {
 	box-sizing: border-box;
 }
 html{
+
 	scroll-behavior: smooth;
     font-size: 62.5%;
-	cursor: none;
-
 }
 body {
 	visibility: hidden;
-	overflow-x: hidden;
-	background-color: #F7F7F7;
 	line-height: 1;
 	font-family: 'Saira', sans-serif;
 	margin: 0;
     padding: 0;
+
+	height: 100%;
+	width: 100%;
+	
+	overflow: hidden;
+
+	background-color: #F7F7F7;
 }
 ol, ul {
 	list-style: none;
