@@ -4,7 +4,8 @@
 .wrapper {
     max-width: 1920px;
     margin: 0 auto;
-    will-change: transform
+    will-change: transform;
+    background-color: #f7f7f7;
 }
 .container {
     max-width: 1800px;
@@ -35,11 +36,47 @@ canvas {
         align-items: center;
         transform: scale(0.8);
         border: 1px solid transparent;
+        
+
+
     }
     &-view {
-        font-size: 1.2rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
         opacity: 0;
         color: $yellow;
+    }
+    &-click {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+    &-text {
+        position: relative;
+        display: block;
+        color: $yellow;
+        text-align: center;
+        overflow: hidden;
+        > span {
+            display: inline-block;
+            text-align: center;
+        }
+        > span:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            width: 100%;
+        }
     }
 }
 
@@ -76,44 +113,25 @@ canvas {
     width: 100%;
     height: 100%;
 }
-.loading {
-    position: absolute;
+
+#process-bar {
+    position: fixed;
     top: 0;
-    height: 100vh;
-    width: 100vw;
-    right: 0;
+    left: 0;
+    height: 8px;
+    width: 0%;
+    background: $black;
+    z-index: 100;
+    transition: width .2s ease;
+}
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8px;
     background-color: $black;
-    color: $whiteSmoke;
-    z-index: 99;
-    &-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        padding: 50vh 0 3rem 0;
-    }
-    &-line {
-        display: inline-block;
-        width: 70%;
-        height: 2px;
-        background-color: $whiteSmoke;
-    }
-    &-logo {
-        display: inline-block;
-        margin-top: auto;
-        text-align: center;
-        > div:first-child {
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-    }
-    &-percent {
-        display: inline-block;
-        font-size: 4.5rem;
-        font-style: italic;
-    }
+    z-index: 100;
+    width: 0%;
 }
 .pd20 {
     padding-bottom: 20px !important;
@@ -133,6 +151,12 @@ canvas {
 }
 .mr-auto {
     margin-left: auto;
+}
+.order-2 {
+    @include breakpoint-down(small){order: 2;}
+}
+.order-3 {
+    @include breakpoint-down(small){order: 3;}
 }
 .rto-box {
     position: relative;
@@ -174,13 +198,13 @@ canvas {
 .image-parallax {
     position: absolute;
     width: 100%;
-    height: 200%;
+    height: 100%;
     object-fit: cover;
+    will-change: transform;
 }
 
 
-@include breakpoint-down(medium){
-    .cursor,
+@media screen and (max-width: 1024px) {
     .cursor-follow {
         display: none;
     }

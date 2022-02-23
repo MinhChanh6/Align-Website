@@ -6,30 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- Link Main CSS -->
     <link rel="stylesheet" href="./App/Scss/style.css">
+    <!-- Link Locomotive CSS -->
     <link rel="stylesheet" href="./App/Css/locomotive.css">
+    <!-- Link Splitting CSS -->
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="/Images/ShortCut.png" />
 </head>
 
 <body>
-
-    <div class="loading">
-        <div class="loading-content">
-            <div class="loading-loader">
-                <span class="loading-percent" id="percentage">00</span>
-            </div>
-
-            <div class="loading-logo">
-                <div>A creative design agency</div>
-                <div>(2021),ALL RIGHTS RESERVED</div>
-            </div>
-        </div>
+    <div id="loading">
     </div>
     <div class="cursor-follow">
-        <span class="cursor-view">
-            View
-        </span>
+        <div class="cursor-view">
+            <span>
+                View
+            </span>
+        </div>
+        <div class="cursor-click">
+            <div class="cursor-inner">
+                <span class="cursor-text">
+                    <span class="js-cursor-text">Click</span>
+                    <span class="js-cursor-text__clone">Click</span>
+                </span>
+            </div>
+        </div>
     </div>
     <header class="header">
         <div class="nav">
@@ -64,10 +69,10 @@
                         <a href="mailto:business@align.vn">business@align.vn</a>
                     </div>
                     <div class="menu-grey__social">
-                        <a href="https://www.facebook.com/alignlab/">Facebook</a>
-                        <a href="https://www.instagram.com/align.vn/">Instagram</a>
-                        <a href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                        <a href="/career.html">Career</a>
+                        <a href="https://www.facebook.com/alignlab/" class="hover">Facebook</a>
+                        <a href="https://www.instagram.com/align.vn/" class="hover">Instagram</a>
+                        <a href="https://www.linkedin.com/company/alignvn/" class="hover">Linkedin</a>
+                        <a href="/career.html" class="hover">Career</a>
                     </div>
                 </div>
             </div>
@@ -80,30 +85,30 @@
 
                     <ul class="menu-black__list">
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Website</span>
                                 <span>Website</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Branding</span>
                                 <span>Branding</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>SEO</span>
                                 <span>SEO</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/about.html" class="menu-black__link">
+                            <a href="/about.html" class="menu-black__link hover">
                                 <span>About</span><span>About</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/insights.html" class="menu-black__link">
+                            <a href="/insights.html" class="menu-black__link hover">
                                 <span>Insights</span><span>Insights</span>
                             </a>
                         </li>
@@ -120,13 +125,13 @@
                         <img src="Images/Website.png" alt="">
                     </div>
                     <div class="categories-item" data-src="Images/Website.png">
-                        <a href="#">Websites </a>
+                        <a class="categories-link" href="#">Websites </a>
                     </div>
                     <div class="categories-item" data-src="Images/Branding.png">
-                        <a href="#">Branding</a>
+                        <a class="categories-link" href="#">Branding</a>
                     </div>
                     <div class="categories-item" data-src="Images/SEO.png">
-                        <a href="#">SEO</a>
+                        <a class="categories-link" href="#">SEO</a>
                     </div>
                 </div>
             </div>
@@ -135,23 +140,36 @@
         <section class="slogan">
             <div class="container">
                 <div class="slogan-wrap">
-                    <div class="slogan-text">
-                        <span class="slogan-animation">Your customers wants to know your <span
-                                class="slogan-orange">brand</span>. </span>
-                        <br><span class="slogan-animation">Create your story & reach them with your <span
-                                class="slogan-orange">website.</span></span>
+                    <div class="slogan-text" data-splitting>
+                        <span class="slogan-animation">Your customers wants to know your
+                            <span class="slogan-orange">
+                                <a href="/works.html" class="hover">brand</a>
+                            </span>.
+                        </span>
+                        <span class="slogan-animation">Create your story & reach them with your
+                            <span class="slogan-orange">
+                                <a href="/works.html" class="hover">website.</a>
+                            </span>
+                        </span>
                         <br>
-                        <span class="slogan-animation">Keep them coming back with <span
-                                class="slogan-orange">SEO</span>.</span>
+                        <span class="slogan-animation">Keep them coming back with
+                            <span class="slogan-orange">
+                                <a href="/works.html" class="hover">SEO</a>
+                            </span>.
+                        </span>
                     </div>
                     <div class="slogan-award">
                         <a href="https://clutch.co/profile/alignvn#summary" class="slogan-logo">
                             <img src="/Images/Slogan.png" alt="">
                         </a>
                         <div class="slogan-award__content">
-                            <h6>Align is top 34 UX/UI</h6>
-                            <h6>Top VietNam Agency</h6>
-                            <h6>5 <img src="/Images/star.png" alt=""> Reviews (13)</h6>
+                            <a class="hover" href="https://clutch.co/vn/agencies/branding">
+                                Align is top 34 UX/UI
+                            </a>
+                            <a class="hover" href="https://clutch.co/agencies/digital?page=6">Top VietNam Agency</a>
+                            <a class="hover" href="https://clutch.co/profile/alignvn#summary">5 <img
+                                    src="/Images/star.png" alt="">
+                                Reviews (13)</a>
                         </div>
                     </div>
                 </div>
@@ -161,7 +179,7 @@
             <div class="container">
                 <div class="project-title">Website projects</div>
                 <div class="project-grid">
-                    <a href="./Work/Puningpu.html" class="project-item">
+                    <a href="./Work/Funingpu.html" class="project-item">
                         <img src="/Images/ProjectOne.png" alt="">
                         <div class="project-overlay">
                             <div class="project-overlay__wrap">
@@ -459,7 +477,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="services-quote">
+                <div class="services-quote" data-splitting>
                     <span data-content="customer">Customer centered design.</span><br>
                     <span data-content="outsourcing">No outsourcing.</span>
                     <span data-content="design">On brand design.</span><br>
@@ -522,23 +540,95 @@
                     <div class="clients-list__heading">
                         Educational
                     </div>
-                    <ul class="clients-list__icon">
-                        <li>
-                            <img src="/Images/EduLogoOne.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/EduLogoTwo.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/EduLogoThree.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/EduLogoFour.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/EduLogoFive.png" alt="">
-                        </li>
-                    </ul>
+                    <div class="clients-list__marque">
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/EduLogoOne.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoTwo.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoThree.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFour.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFive.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSix.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSeven.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoEight.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoNine.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/EduLogoOne.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoTwo.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoThree.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFour.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFive.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSix.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSeven.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoEight.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoNine.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/EduLogoOne.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoTwo.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoThree.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFour.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoFive.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSix.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoSeven.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoEight.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/EduLogoNine.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="line"></div>
@@ -547,23 +637,95 @@
                     <div class="clients-list__heading">
                         Industrial
                     </div>
-                    <ul class="clients-list__icon">
-                        <li>
-                            <img src="/Images/IndusLogo1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/IndusLogo2.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/IndusLogo3.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/IndusLogo4.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/IndusLogo5.png" alt="">
-                        </li>
-                    </ul>
+                    <div class="clients-list__marque">
+                        <ul class="clients-list__icon marqueForward">
+                            <li>
+                                <img src="/Images/IndusLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo9.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marqueForward">
+                            <li>
+                                <img src="/Images/IndusLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo9.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marqueForward">
+                            <li>
+                                <img src="/Images/IndusLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/IndusLogo9.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="line"></div>
@@ -572,60 +734,184 @@
                     <div class="clients-list__heading">
                         American
                     </div>
-                    <ul class="clients-list__icon">
-                        <li>
-                            <img src="/Images/AmericanLogo1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/AmericanLogo2.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/AmericanLogo3.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/AmericanLogo4.png" alt="">
-                        </li>
-                        <li>
-                            <img src="/Images/AmericanLogo5.png" alt="">
-                        </li>
-                    </ul>
+                    <div class="clients-list__marque">
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/AmericanLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo9.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/AmericanLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo9.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="clients-list__icon marque">
+                            <li>
+                                <img src="/Images/AmericanLogo1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo2.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo3.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo4.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo5.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo6.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo7.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo8.png" alt="">
+                            </li>
+                            <li>
+                                <img src="/Images/AmericanLogo9.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="line"></div>
-
             <div class="container">
                 <div class="reviews">
-                    <div class="reviews-flex">
-                        <div class="reviews-info">
-                            <div class="reviews-personal">
-                                <img src="/Images/Personal.png" alt="">
-                                <div class="reviews-personal__text">
-                                    <p>Personal Name</p>
-                                    <p>Head of Marketing, Adour Group</p>
+                    <div class="reviews-flex mainSwiper">
+                        <div class="personSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal2.jpg" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Patrick Carpenter</p>
+                                            <p>Communications Consultant, International Aid Organization </p>
 
-
-                                    <ul>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                    </ul>
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal3.jpg" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Arden Linh Nguyen</p>
+                                            <p>Head of Marketing, Adour Group</p>
 
+
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal.png" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Phil Greswold</p>
+                                            <p>MD, KEEP</p>
+
+
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="reviews-logo">
-                                <img src="/Images/Slogan.png" alt="">
-                                <p>Reviews from Clutch</p>
-                            </div>
+
                         </div>
-                        <div class="reviews-quote">
-
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae viverra purus orci eu
-                                malesuada eget neque, consequat vel. Sodales faucibus volutpat, cras mi.</q>
-                            </p>
+                        <div class="reviewSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide reviews-quote">
+                                    <q>We were 100% satisfied with Align's level of professionalism and commitment. They
+                                        literally became a part of the team!</q>
+                                </div>
+                                <div class="swiper-slide reviews-quote">
+                                    <q>They managed to offer a professional website that was so affordable compared
+                                        to
+                                        the
+                                        effort that they put in.</q>
+                                </div>
+                                <div class="swiper-slide reviews-quote">
+                                    <q>
+                                        Their good communication stood out for us.
+                                    </q>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <a href="https://clutch.co/profile/alignvn#reviews" class="reviews-logo hover">
+                        <img src="/Images/Slogan.png" alt="">
+                        <p>Reviews from Clutch</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -733,36 +1019,39 @@
                                 </div>
                                 <div class="footer-times">
                                     <div class="footer-usa">
-                                        <div id="time-usa"></div>
-                                        <div>PST, USA</div>
+                                        <div id="time-sf"></div>
+                                        <div>PST,SF</div>
+                                    </div>
+                                    <div class="footer-usa">
+                                        <div id="time-texas"></div>
+                                        <div>CST,TX</div>
+                                    </div>
+                                    <div class="footer-usa">
+                                        <div id="time-atlanta"></div>
+                                        <div>EST,ATL</div>
                                     </div>
                                     <div class="footer-usa">
                                         <div id="time-vietnam"></div>
-                                        <div>Vietnam</div>
-                                    </div>
-                                    <div class="footer-usa">
-                                        <div id="time-tokyo"></div>
-                                        <div>Tokyo</div>
+                                        <div>HCMC,VN</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="footer-end">
                                 <div class="footer-private">
                                     <div class="footer-policy ">
-                                        <a class="hover-footer" href="#">Privacy Policy</a>
+                                        <a class="hover" href="#">Privacy Policy</a>
                                     </div>
                                     <div class="footer-copyrights">
-                                        <a class="hover-footer" href="#">Copyrights</a>
+                                        <a class="hover" href="#">Copyrights</a>
                                     </div>
                                 </div>
-                                <div class="footer-sub hover-footer">
+                                <div class="footer-sub hover">
                                     Subscribe to our Newsletter
                                 </div>
                                 <div class="footer-social">
-                                    <a class="hover-footer" href="https://www.facebook.com/alignlab">Facebook</a>
-                                    <a class="hover-footer"
-                                        href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                                    <a class="hover-footer" href="https://www.instagram.com/align.vn/">Instagram</a>
+                                    <a class="hover" href="https://www.facebook.com/alignlab">Facebook</a>
+                                    <a class="hover" href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
+                                    <a class="hover" href="https://www.instagram.com/align.vn/">Instagram</a>
                                 </div>
                             </div>
                         </div>
@@ -787,12 +1076,17 @@
         </footer>
     </div>
 
-
+    <!-- Locomotive JS -->
     <script src="/App/Js/Locomotive/index.js"></script>
+    <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js"></script>
+    <!-- Splitting JS -->
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS -->
     <script src="/App/Js/index.js" type="module"></script>
 </body>
 

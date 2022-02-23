@@ -1,4 +1,4 @@
-import createdSplitting from './Module/splitting.js';
+
 import handleCheckBox from './Module/checkbox.js';
 import handleTabs from './Module/tabs.js';
 import createLoading from './Module/loading.js';
@@ -13,14 +13,21 @@ import createdActiveForm from './Module/form.js';
 import createdAnimation from './Module/animations.js';
 import createdAutoChangeText from './Module/autoChangeText.js';
 import createShowMore from './Module/showMore.js';
+import createdProcessBar from './Module/processBar.js';
+import createLightGallarey from './Module/lightGallarey.js';
+import createSwiper from './Module/swiper.js';
+
 window.addEventListener('DOMContentLoaded', () => {
     gsap.to("body", 0, { css: { visibility: "visible" } });
-
+    gsap.config({
+        nullTargetWarn: false,
+        trialWarn: false,
+    });
     createShowMore();
     createdAutoChangeText();
     createLoading();
     handleMenu();
-    // createCanvas();
+    createCanvas();
     customizeCursor();
     createdButton();
     createdScrollTrigger();
@@ -30,6 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
     handleTabs();
     handleCheckBox();
     createdAnimation();
-
-
+    createdProcessBar();
+    Splitting();
+    createLightGallarey();
+    createSwiper();
 });

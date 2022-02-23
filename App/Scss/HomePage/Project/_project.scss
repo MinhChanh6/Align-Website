@@ -121,7 +121,7 @@
 }
 @include breakpoint-down(medium) {
     .project-grid {
-        height: 950px;
+        height: 1250px;
         padding-bottom: 60px;
     }
     .project-overlay {
@@ -169,7 +169,7 @@
             padding-bottom: 25px;
         }
         &-grid {
-            height: 495px;
+            height: 600px;
             padding-bottom: 30px;
         }
         &-item:nth-child(1) {

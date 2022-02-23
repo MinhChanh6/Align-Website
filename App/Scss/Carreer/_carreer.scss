@@ -58,13 +58,25 @@
 .popup {
     background-color: $black;
     position: absolute;
-    top: 70vh;
+    top: 0;
     right: -100%;
     width: 50%;
     height: 100%;
     transition: $transition;
+    z-index: 100;
+
+    @include breakpoint-down(medium) {
+        width: 80%;
+        top: 100%;
+    }
+    @include breakpoint-down(small) {
+        width: 100%;
+    }
     &-wrap {
         padding: 11rem 9.7rem 0;
+        @include breakpoint-down(small) {
+            padding: 5rem 5rem 0;
+        }
         > div > .menu-black__close {
             height: 35px;
             width: 35px;
@@ -78,7 +90,7 @@
         }
         > div > .carreer-button {
             color: $white;
-            margin-top: 4rem;
+            margin-top: 6rem;
             > .button{
                 border: 1px solid $white;
 
@@ -98,6 +110,10 @@
             textarea, textarea::placeholder {
                 color: $white;
                 font-size: 2.4rem;
+
+                @include breakpoint-down(small) {
+                    font-size: 1.8rem;
+                }
             }
             > textarea {
                 height: 16rem;
@@ -105,6 +121,9 @@
             > div > label {
                 color: $white;
                 font-size: 2.4rem;
+                @include breakpoint-down(small) {
+                    font-size: 1.8rem;
+                }
             }
 
         }
@@ -112,5 +131,50 @@
     }
     &.active {
         right: -5%;
+
+        @include breakpoint-down(small) {
+            right: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+    .carreer-title {
+        font-size: 5vw;
+    }
+}
+
+@include breakpoint-down(medium) {
+    .carreer {
+
+        &-title {
+            font-size: 6rem;
+            width: 100%;
+            line-height: 130%;
+        }
+    }
+}
+
+@include breakpoint-down(small) {
+    .carreer {
+        position: relative;
+        overflow: hidden;
+
+        &-h5 {
+            font-size: 2rem;
+        }
+        &-title {
+            font-size: 4.8rem;
+        }
+        &-job {
+            font-size: 1.6rem;
+            &__title {
+                font-size: 2.5rem;
+            }
+            &__desc,
+            &__skill {
+                margin-bottom: 4rem;
+            }
+        }
     }
 }

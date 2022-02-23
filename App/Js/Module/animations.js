@@ -1,39 +1,47 @@
 export default function createdAnimation() {
 
-    const categoriesItems = document.querySelectorAll('.categories-item');
-    const worksSlogan = document.querySelector('.works-slogan')
-    const aboutTitle = document.querySelector('.about-title')
+    window.addEventListener("load", () => {
+        const categoriesItems = document.querySelectorAll('.categories-link');
+        const worksSlogan = document.querySelector('.works-slogan')
 
 
 
-    if (categoriesItems) {
-        const introHomeTimeline = gsap.timeline({ delay: 1.85 });
-        introHomeTimeline.from([categoriesItems], 0.75, {
-            opacity: 0,
-            y: 40,
-            stagger: .15,
-            ease: 'Slowmo.easeOut'
-        }, "=1.85")
-        introHomeTimeline.from('#canvas1', 1.5, {
-            opacity: 0,
-            ease: 'Slowmo.easeOut'
-        }, "=-0.55")
-    }
-    if (worksSlogan) {
-        const introWorksTimeline = gsap.timeline({ delay: 1.85 });
-        introWorksTimeline.from('.slogan-award__content > h6', 0.6, {
-            opacity: 0,
-            y: '100%',
-            stagger: .15,
-        }, "=1.85")
-        introWorksTimeline.from('.slogan-logo', 0.5, { opacity: 0 }, "-=0.65")
-        introWorksTimeline.from('.works-title > span', 0.5, {
-            y: '100%'
-        }, "-=0.55")
-    }
-    if (aboutTitle) {
-        const introAboutTimeline = gsap.timeline({ delay: 1.85 });
-        const words = document.querySelectorAll('.word')
-        introAboutTimeline.from(words, { duration: 0.5, opacity: 0, stagger: 0.02, ease: "power1.inOut" }, "=1.85");
-    }
+
+        if (categoriesItems) {
+            const introHomeTimeline = gsap.timeline();
+            introHomeTimeline.from([categoriesItems], 1.1, {
+                opacity: 0,
+                yPercent: 100,
+                ease: "power4.out",
+                stagger: 0.15
+            })
+        }
+        if (worksSlogan) {
+            const introWorksTimeline = gsap.timeline();
+            introWorksTimeline.from('.works-title > span', 1.3, {
+                y: '150%',
+                ease: 'power4.out'
+            })
+            introWorksTimeline.from('.slogan-award__content > a', 0.75, {
+                opacity: 0,
+                y: '100%',
+                stagger: { amount: 0.15 },
+                ease: 'power4.out'
+            }, "-=1")
+            introWorksTimeline.from('.slogan-logo', 0.5, { opacity: 0 }, "-=1")
+        }
+
+        //About title 
+        const aboutTitle = document.querySelector('.about-title')
+        if (aboutTitle) {
+            const introAboutTimeline = gsap.timeline();
+            introAboutTimeline.from('.about-title > span > .word', 1.25, {
+                opacity: 0,
+                y: 200,
+                ease: "power4.out",
+                stagger: { amount: 0.2 }
+            });
+        }
+    })
+
 }

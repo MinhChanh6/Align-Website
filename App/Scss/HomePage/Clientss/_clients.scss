@@ -17,12 +17,41 @@
             font-size: 2.4rem;
             color: $black;
         }
-        &__icon {
-            display: flex;
-            justify-content: space-between;
+        &__marque {
             width: calc(100%*9/12);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            &::after {
+                content: "";
+                position: absolute;
+                top: -5px;
+                left: 0;
+                width: 100%;
+                height: calc(100% + 10px);
+                z-index: 2;
+                background-image: linear-gradient(-90deg,#F7F7F7,hsla(0,0%,97.6%,.85) 10%,hsla(0,0%,97.6%,0) 20%,hsla(0,0%,97.6%,0) 80%,hsla(0,0%,97.6%,.85) 90%,#F7F7F7);
+            }
+            @include breakpoint-down(medium) {
+                width: 100%;
+            }
+            
+        }
+        &__icon {
+            width: 300%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            will-change: transform;
+            &:not(:last-child),
+            & > li:not(:last-child){
+                margin-right: 12.6rem;
+            }
         }
     }
+}
+.marqueForward {
+    will-change: transform;
 }
 .line {
     margin-top: 40px;
@@ -38,16 +67,13 @@
     &-flex {
         display: flex;
         justify-content: space-between;
-    }
-    &-info {
-        width: calc(100%*6/12);
+        margin-bottom: 30px;
     }
 
     &-personal {
         display: flex;
-        height: 60%;
-        padding-bottom: 4.8rem;
         > img {
+            border-radius: 50%;
             width: 6.2rem;
             height: 6.2rem;
             object-fit: cover;
@@ -88,8 +114,9 @@
     &-logo {
         display: flex;
         align-items: center;
-
+        width: fit-content;
         > img {
+            
             margin-right: 3rem;
             object-fit: cover;
         }
@@ -101,11 +128,20 @@
 
     &-quote {
         font-size: 3.6rem;
-        width: calc(100%*6/12);
         line-height: 1.2;
     }
 }
+.reviewSwiper,
+.personSwiper {
+    width: calc(100%*6/12);
 
+    @include breakpoint-down(small) {
+        width: 100%;
+    }
+}
+.swiper-slide:not(.swiper-slide-active){
+    opacity: 0 !important;
+}
 @media screen and (min-width: 768px) and (max-width: 1600px){
     .reviews-quote {
         font-size: 1.875vw;
@@ -119,14 +155,15 @@
     .clients-list__heading {
         display: none;
     }
-    .clients-list__icon {
-        width: 100%;
+    .reviews-quote {
+        font-size: 1.8rem;
     }
     .reviews-personal__text {
         > p  {
             font-size: 2rem;
             &:nth-child(2) {
                 padding-bottom: 20px;
+                max-width: 300px;
             }
         }
     }
@@ -147,20 +184,15 @@
             &__heading {
                 display: none;
             }
+
             &__icon {
-                flex-wrap: wrap;
-                width: 100%;
-                align-items: center;
 
-                > li:nth-child(4), li:nth-child(5) {
-                    display: none;
-                }
-
-                > li {
-                    width: calc(100%/3);
+                > li:not(:last-child) {
+                    margin-right: 3.5rem;
 
                     > img {
-                        width: 85%;
+                        object-fit: cover;
+                        width: 70px;
                     }
                 }
             }
@@ -175,7 +207,7 @@
 
         &-info {
             width: 100%;
-            padding-bottom: 32px;
+            padding-bottom: 15px;
         }
 
         &-personal__text > p {

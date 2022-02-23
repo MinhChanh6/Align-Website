@@ -6,31 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furas Project</title>
-    <link rel="stylesheet" href="../App/Css/locomotive.css">
+    <!-- Link Main CSS -->
     <link rel="stylesheet" href="../App/Scss/style.css">
+    <!-- Link Locomotive CSS -->
+    <link rel="stylesheet" href="../App/Css/locomotive.css">
+    <!-- Link Splitting CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- LightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.1/css/lightgallery-bundle.css">
+    <link rel="shortcut icon" href="/Images/ShortCut.png" />
+
 </head>
 
 <body>
-    <div class="loading">
-        <div class="loading-content">
-            <div class="loading-loader">
-                <span class="loading-percent" id="percentage">00</span>
-            </div>
-
-            <div class="loading-logo">
-                <div>A creative design agency</div>
-                <div>(2021),ALL RIGHTS RESERVED</div>
-            </div>
-        </div>
-    </div>
+    <div id="loading"></div>
     <div class="cursor-follow">
         <span class="cursor-view">
             View
         </span>
     </div>
+    <div id="process-bar">
+    </div>
     <header class="header">
         <div class="nav">
-            <a href="/index.html" class="logo"><img src="../Images/Logo.png" alt=""></a>
+            <a href="/index.html" class="logo"><img src="/Images/Logo.png" alt=""></a>
 
             <div class="burger hide-cursor">
                 <span></span>
@@ -61,10 +63,10 @@
                         <a href="mailto:business@align.vn">business@align.vn</a>
                     </div>
                     <div class="menu-grey__social">
-                        <a href="https://www.facebook.com/alignlab/">Facebook</a>
-                        <a href="https://www.instagram.com/align.vn/">Instagram</a>
-                        <a href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                        <a href="/career.html">Career</a>
+                        <a href="https://www.facebook.com/alignlab/" class="hover">Facebook</a>
+                        <a href="https://www.instagram.com/align.vn/" class="hover">Instagram</a>
+                        <a href="https://www.linkedin.com/company/alignvn/" class="hover">Linkedin</a>
+                        <a href="/career.html" class="hover">Career</a>
                     </div>
                 </div>
             </div>
@@ -77,30 +79,30 @@
 
                     <ul class="menu-black__list">
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Website</span>
                                 <span>Website</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Branding</span>
                                 <span>Branding</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>SEO</span>
                                 <span>SEO</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/about.html" class="menu-black__link">
+                            <a href="/about.html" class="menu-black__link hover">
                                 <span>About</span><span>About</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/insights.html" class="menu-black__link">
+                            <a href="/insights.html" class="menu-black__link hover">
                                 <span>Insights</span><span>Insights</span>
                             </a>
                         </li>
@@ -111,7 +113,7 @@
     </header>
     <div class="wrapper smooth-scroll" data-scroll-container>
         <div class="mt">
-            <div class="container work1 last-section">
+            <div class="container work1 last-section lightgallarey">
                 <div class="ct-title">
                     Furas Furniture Accessories
                 </div>
@@ -120,7 +122,10 @@
                     <div>UI/UX</div>
                 </div>
 
-                <img src="/Images/Furas1.png" alt="" class="work1-banner">
+                <a href="/Images/Furas1.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas1.png" alt="">
+                </a>
+
 
                 <div class="work1-flex work1-about">
                     <div class="work1-title">
@@ -133,7 +138,10 @@
                     </div>
                 </div>
 
-                <img src="/Images/Furas2.png" alt="" class="work1-banner">
+                <a href="/Images/Furas2.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas2.png" alt="">
+                </a>
+
 
                 <div class="work1-flex work1-challenge">
                     <div class="work1-title">
@@ -167,7 +175,9 @@
                     </div>
                 </div>
 
-                <img src="/Images/Furas3.png" alt="" class="work1-banner">
+                <a href="/Images/Furas3.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas3.png" alt="">
+                </a>
 
                 <div class="work1-flex">
                     <div class="work1-title">
@@ -180,9 +190,15 @@
                     </div>
                 </div>
 
-                <img src="/Images/Furas4.png" alt="" class="work1-banner">
-                <img src="/Images/Furas5.png" alt="" class="work1-banner">
-                <img src="/Images/Furas6.png" alt="" class="work1-banner">
+                <a href="/Images/Furas4.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas4.png" alt="">
+                </a>
+                <a href="/Images/Furas5.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas5.png" alt="">
+                </a>
+                <a href="/Images/Furas6.png" class="lightgallarey-item work1-banner">
+                    <img src="/Images/Furas6.png" alt="">
+                </a>
 
                 <div class="project-button">
                     <div class="button">
@@ -199,10 +215,10 @@
                         <div class="footer-outter">
                             <div class="footer-heading">
                                 <div class="footer-heading__text">
-                                    <span>Funingpu</span> <br>
-                                    <span>Website Redesign</span>
+                                    <span>Funingpu Website </span> <br>
+                                    <span>Redesign</span>
                                 </div>
-                                <a href="./Puningpu.html" class="hide-cursor" id="circle-footer">
+                                <a href="/Work/Funingpu.html" class="hide-cursor" id="circle-footer">
                                     <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
@@ -226,48 +242,41 @@
                                             283 St, Ward 19, District 1, HCM City
                                         </div>
                                     </div>
-                                    <a href="/Contact.html" class="footer-button">
-                                        <div class="project-button">
-                                            <div class="button">
-                                                <div class="button__filler"></div>
-                                                <span class="button__text">
-                                                    <span class="button__text-inner">Start a project</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
                                     <div class="footer-times">
                                         <div class="footer-usa">
-                                            <div id="time-usa"></div>
-                                            <div>PST, USA</div>
+                                            <div id="time-sf"></div>
+                                            <div>PST,SF</div>
+                                        </div>
+                                        <div class="footer-usa">
+                                            <div id="time-texas"></div>
+                                            <div>CST,TX</div>
+                                        </div>
+                                        <div class="footer-usa">
+                                            <div id="time-atlanta"></div>
+                                            <div>EST,ATL</div>
                                         </div>
                                         <div class="footer-usa">
                                             <div id="time-vietnam"></div>
-                                            <div>Vietnam</div>
-                                        </div>
-                                        <div class="footer-usa">
-                                            <div id="time-tokyo"></div>
-                                            <div>Tokyo</div>
+                                            <div>HCMC,VN</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer-end">
                                     <div class="footer-private">
                                         <div class="footer-policy ">
-                                            <a class="hover-footer" href="#">Privacy Policy</a>
+                                            <a class="hover" href="#">Privacy Policy</a>
                                         </div>
                                         <div class="footer-copyrights">
-                                            <a class="hover-footer" href="#">Copyrights</a>
+                                            <a class="hover" href="#">Copyrights</a>
                                         </div>
                                     </div>
-                                    <div class="footer-sub hover-footer">
+                                    <div class="footer-sub hover">
                                         Subscribe to our Newsletter
                                     </div>
                                     <div class="footer-social">
-                                        <a class="hover-footer" href="https://www.facebook.com/alignlab">Facebook</a>
-                                        <a class="hover-footer"
-                                            href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                                        <a class="hover-footer" href="https://www.instagram.com/align.vn/">Instagram</a>
+                                        <a class="hover" href="https://www.facebook.com/alignlab">Facebook</a>
+                                        <a class="hover" href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
+                                        <a class="hover" href="https://www.instagram.com/align.vn/">Instagram</a>
                                     </div>
                                 </div>
                             </div>
@@ -295,10 +304,23 @@
     </div>
 
 
+    <!-- Locomotive JS -->
     <script src="/App/Js/Locomotive/index.js"></script>
+    <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js"></script>
+    <!-- Splitting JS -->
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- LightGallery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/video/lg-video.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.4.0/plugins/zoom/lg-zoom.min.js"></script>
+    <!-- Main JS -->
     <script src="/App/Js/index.js" type="module"></script>
 </body>
 

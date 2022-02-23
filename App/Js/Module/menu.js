@@ -4,7 +4,7 @@ export default function handleMenu() {
     const menuItems = document.querySelectorAll('.menu-black__item');
     const menuSocialItems = document.querySelectorAll('.menu-grey__social > a')
     const burgerMenu = document.querySelector('.burger')
-    const burgerMenuClose = document.querySelector('.menu-black__close')
+    const burgerMenuClose = document.querySelector('.menu-black__wrap .menu-black__close')
     const popupForm = document.querySelector('.popup')
     const formClose = document.querySelector('.popup-wrap > div > .contact-close')
 

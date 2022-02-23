@@ -42,16 +42,22 @@
 }
 @include breakpoint-down(medium) {
     .insights {
-
+        &-list {
+            flex-direction: column;
+        }
         &-item {
-
+            width: 100%;
+            &:not(:last-child) {
+                margin-right: unset;
+                margin-bottom: 20px;
+            }
             &:hover .project-overlay{
                 width: 100%;
             }
         }
 
         &-wrap {
-            height: 285px;
+            height: 350px;
         }
     }
 }
@@ -78,7 +84,7 @@
         }
 
         &-wrap {
-            height: 150px;
+            height: 170px;
         }
     }
 }

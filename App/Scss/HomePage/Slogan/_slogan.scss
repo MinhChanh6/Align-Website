@@ -16,6 +16,8 @@
         color: $black;
     }
     &-animation {
+        position: relative;
+        overflow: hidden;
         display: inline-block;
     }
     &-orange {
@@ -29,7 +31,8 @@
             font-size: 2.4rem;
             position: relative;
             overflow: hidden;
-            > h6 {
+            > a {
+                display: block;
                 transform: translateY(0);
                 margin-bottom: 10px;
             }
@@ -52,7 +55,7 @@
     }
 }
 @include breakpoint-down(medium) {
-    .slogan-award__content > h6 {
+    .slogan-award__content > a {
         font-size: 1.92rem;
     }
 }
@@ -68,7 +71,7 @@
             font-size: 2rem;
             line-height: 140%;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 45px;
         }
         &-award {
             width: 100%;
@@ -77,7 +80,7 @@
             &__content {
                 font-size: 1.4rem;
 
-                > h6 >  img {
+                > a >  img {
                     width: 1.2rem;
                 }
             }
@@ -85,5 +88,10 @@
         &-logo > img{
             max-width: 48px;
         }
+        &-animation {
+            display: unset;
+            line-height: 150%;
+        }
+
     }
 }

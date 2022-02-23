@@ -15,9 +15,11 @@
         }
     }
     &-banner {
-        width: 100%;
-        object-fit: cover;
-
+        display: block;
+        > img {
+            width: 100%;
+            object-fit: cover;
+        }   
         &:nth-of-type(1) {
             margin-bottom: 14rem;
         }
@@ -78,6 +80,11 @@
             width: calc(100%*5/12);
         }
         &-banner {
+            display: block;
+            > img {
+                width: 100%;
+                object-fit: cover;
+            }
             &:nth-of-type(1) {
                 margin-bottom: unset;
             }
@@ -101,9 +108,12 @@
         }
     }
     &-banner {
-        transform: scale(1.15) translate(0%, -15%);
-        position: relative;
-        z-index: -2;
+        > img {
+            transform: scale(1.15) translate(0%, -15%);
+            position: relative;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 }
 //<<----- ICM STYLE END ----->> // 
@@ -111,13 +121,16 @@
 //<<----- PUNINGPU STYLE START ----->> // 
 .work3 {
     &-banner {
-        transform: translate(0, -10%) scale(1.1);
+        > img {
+            transform: translate(0, -10%) scale(1.1);
+        }
     }
     &-result {
         margin-bottom: 17rem;
     }
     &-flex {
         margin-bottom: 10rem;
+
     }
     &-video {
         margin-bottom: 15rem;
@@ -129,14 +142,21 @@
     }
     .work1 {
         &-banner {
+            display: block;
             &:nth-of-type(1) {
                 margin-bottom: unset;
             }
             &:nth-of-type(2),
             &:nth-of-type(7) {
-                display: block;
-                margin: 20rem auto;
-                width: auto;
+                > img {
+                    display: block;
+                    margin: 20rem auto;
+                    width: auto;
+                }
+            }
+            &:nth-of-type(3) {
+                margin-top: 10rem;
+                margin-bottom: 15rem;
             }
             &:nth-of-type(4){
                 margin-top: 15rem;
@@ -197,12 +217,12 @@
         &-flex {
             display: block;
             
-            > img:nth-child(1) {
+            > a:nth-child(1)>  img {
                 display: block;
                 margin: 0 auto 10rem;
                 width: 35%;
             }
-            > img:nth-child(2){
+            > a:nth-child(2) > img{
                 width: 100%;
             }
         }
@@ -244,8 +264,10 @@
             &-banner {
                 &:nth-of-type(2),
                 &:nth-of-type(7){
-                    width: 100%;
-                    margin: 10rem auto;
+                    > img {
+                        width: 100%;
+                        margin: 10rem auto;
+                    }
                 }
                 &:nth-of-type(4){
                     margin-top: 10rem;

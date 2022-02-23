@@ -1,8 +1,6 @@
 export default function createdMagneticButton() {
     const buttons = document.querySelectorAll('.button');
-    const cursor = document.querySelector('.cursor');
     const cursorFollow = document.querySelector('.cursor-follow');
-    let movement = 25;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     buttons.forEach((button) => {
@@ -10,25 +8,6 @@ export default function createdMagneticButton() {
         const textInner = button.querySelector('.button__text-inner')
         const textOunner = button.querySelector('.button__text')
         const boundingRect = button.getBoundingClientRect();
-
-        // function move(e) {
-
-        //     let relX = e.pageX - boundingRect.left;
-        //     let relY = e.pageY - boundingRect.top;
-
-
-        //     gsap.to(button, 0.3, {
-        //         x: (relX - boundingRect.width / 2) / boundingRect.width * movement,
-        //         y: (relY - boundingRect.height / 2 - scrollTop) / boundingRect.width * movement,
-        //         ease: 'Power3.easeOut',
-        //     });
-        //     gsap.to(textOunner, 0.3, {
-        //         x: (relX - boundingRect.width / 2) / boundingRect.width * 10,
-        //         y: (relY - boundingRect.height / 2 - scrollTop) / boundingRect.width * 10,
-        //         ease: 'Power3.easeOut',
-        //     });
-        // }
-
 
         function enter(e) {
             const tl = gsap.timeline();
@@ -87,19 +66,7 @@ export default function createdMagneticButton() {
                     y: '0%'
                 }, 0.15);
         }
-
-        // button.addEventListener('mousemove', move);
         button.addEventListener('mouseenter', enter);
         button.addEventListener('mouseleave', leave);
-
-
-
-
     })
-
-
-
-
-
-
 }

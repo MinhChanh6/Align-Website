@@ -1,3 +1,5 @@
+
+
 .about {
 
     &-title {
@@ -5,13 +7,18 @@
         line-height: 140%;
         max-width: 1120px;
         margin-bottom: 8rem;
+
+        > span {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
     }
     &-parallax {
-        height: 750px;
+        --aspect-ratio: 1176/748;
+        padding-bottom: calc(100% / (var(--aspect-ratio)));
+        height: 0;
         margin-bottom: 9rem;
-    }
-    &-banner {
-        top: -10%;
     }
     &-achievements {
         padding-bottom: 9rem;
@@ -40,9 +47,6 @@
         &-title {
             font-size: 3.84rem;
             line-height: 140%;
-        }
-        &-banner {
-            height: 625px;
         }
         &-achievements {
             &__flex {

@@ -80,6 +80,11 @@
         font-size: 2.4rem;
         line-height: 130%;
         width: calc(100%*7/12);
+        > span {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
         @include breakpoint-down(medium) {
             width: 100%;
         }

@@ -3,12 +3,17 @@
         position: relative;
         display: flex;
         justify-content: space-between;
-        margin: 0 -15px;
     }
     &-item {
         font-size: 9.6rem;
         position: relative;
         color: $black;
+        overflow: hidden;
+    }
+
+    &-link {
+        display: inline-block;
+        line-height: 130%;
     }
 
     &-img {

@@ -6,26 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Works</title>
+    <!-- Link Main CSS -->
     <link rel="stylesheet" href="./App/Scss/style.css">
+    <!-- Link Locomotive CSS -->
+    <link rel="stylesheet" href="./App/Css/locomotive.css">
+    <!-- Link Splitting CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="/Images/ShortCut.png" />
 </head>
 
 <body>
-    <div class="loading">
-        <div class="loading-content">
-            <div class="loading-loader">
-                <span class="loading-percent" id="percentage">00</span>
-            </div>
-
-            <div class="loading-logo">
-                <div>A creative design agency</div>
-                <div>(2021),ALL RIGHTS RESERVED</div>
-            </div>
-        </div>
+    <div id="loading">
     </div>
     <div class="cursor-follow">
-        <span class="cursor-view">
-            View
-        </span>
+        <div class="cursor-view">
+            <span>
+                View
+            </span>
+        </div>
+        <div class="cursor-click">
+            <div class="cursor-inner">
+                <span class="cursor-text">
+                    <span class="js-cursor-text">Click</span>
+                    <span class="js-cursor-text__clone">Click</span>
+                </span>
+            </div>
+        </div>
     </div>
     <header class="header">
         <div class="nav">
@@ -60,10 +69,10 @@
                         <a href="mailto:business@align.vn">business@align.vn</a>
                     </div>
                     <div class="menu-grey__social">
-                        <a href="https://www.facebook.com/alignlab/">Facebook</a>
-                        <a href="https://www.instagram.com/align.vn/">Instagram</a>
-                        <a href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                        <a href="/career.html">Career</a>
+                        <a href="https://www.facebook.com/alignlab/" class="hover">Facebook</a>
+                        <a href="https://www.instagram.com/align.vn/" class="hover">Instagram</a>
+                        <a href="https://www.linkedin.com/company/alignvn/" class="hover">Linkedin</a>
+                        <a href="/career.html" class="hover">Career</a>
                     </div>
                 </div>
             </div>
@@ -76,30 +85,30 @@
 
                     <ul class="menu-black__list">
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Website</span>
                                 <span>Website</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>Branding</span>
                                 <span>Branding</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/works.html" class="menu-black__link">
+                            <a href="/works.html" class="menu-black__link hover">
                                 <span>SEO</span>
                                 <span>SEO</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/about.html" class="menu-black__link">
+                            <a href="/about.html" class="menu-black__link hover">
                                 <span>About</span><span>About</span>
                             </a>
                         </li>
                         <li class="menu-black__item">
-                            <a href="/insights.html" class="menu-black__link">
+                            <a href="/insights.html" class="menu-black__link hover">
                                 <span>Insights</span><span>Insights</span>
                             </a>
                         </li>
@@ -120,9 +129,13 @@
                             <img src="/Images/Slogan.png" alt="">
                         </a>
                         <div class="slogan-award__content">
-                            <h6>Align is top 34 UX/UI</h6>
-                            <h6>Top VietNam Agency</h6>
-                            <h6>5 <img src="/Images/star.png" alt=""> Reviews (13)</h6>
+                            <a class="hover" href="https://clutch.co/vn/agencies/branding">
+                                Align is top 34 UX/UI
+                            </a>
+                            <a class="hover" href="https://clutch.co/agencies/digital?page=6">Top VietNam Agency</a>
+                            <a class="hover" href="https://clutch.co/profile/alignvn#summary">5 <img
+                                    src="/Images/star.png" alt="">
+                                Reviews (13)</a>
                         </div>
                     </div>
                 </div>
@@ -356,34 +369,90 @@
         <section>
             <div class="container">
                 <div class="reviews pd0">
-                    <div class="reviews-flex">
-                        <div class="reviews-info">
-                            <div class="reviews-personal">
-                                <img src="/Images/Personal.png" alt="">
-                                <div class="reviews-personal__text">
-                                    <p>Personal Name</p>
-                                    <p>Head of Marketing, Adour Group</p>
-                                    <ul>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                        <li><img src="/Images/star.png" alt=""></li>
-                                    </ul>
-                                </div>
+                    <div class="reviews-flex mainSwiper">
+                        <div class="personSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal2.jpg" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Patrick Carpenter</p>
+                                            <p>Communications Consultant, International Aid Organization </p>
 
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal3.jpg" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Arden Linh Nguyen</p>
+                                            <p>Head of Marketing, Adour Group</p>
+
+
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide reviews-info">
+                                    <div class="reviews-personal">
+                                        <img src="/Images/Personal.png" alt="">
+                                        <div class="reviews-personal__text">
+                                            <p>Phil Greswold</p>
+                                            <p>MD, KEEP</p>
+
+
+                                            <ul>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                                <li><img src="/Images/star.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="reviews-logo">
-                                <img src="/Images/Slogan.png" alt="">
-                                <p>Reviews from Clutch</p>
-                            </div>
+
                         </div>
-                        <div class="reviews-quote">
-                            <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae viverra purus orci eu
-                                malesuada eget neque, consequat vel. Sodales faucibus volutpat, cras mi.</q>
-                            </p>
+                        <div class="reviewSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide reviews-quote">
+                                    <q>We were 100% satisfied with Align's level of professionalism and commitment. They
+                                        literally became a part of the team!</q>
+                                </div>
+                                <div class="swiper-slide reviews-quote">
+                                    <q>They managed to offer a professional website that was so affordable compared
+                                        to
+                                        the
+                                        effort that they put in.</q>
+                                </div>
+                                <div class="swiper-slide reviews-quote">
+                                    <q>
+                                        Their good communication stood out for us.
+                                    </q>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <a href="https://clutch.co/profile/alignvn#reviews" class="reviews-logo hover">
+                        <img src="/Images/Slogan.png" alt="">
+                        <p>Reviews from Clutch</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -456,10 +525,10 @@
                     <div class="footer-outter">
                         <div class="footer-heading">
                             <div class="footer-heading__text">
-                                <span>See our</span> <br>
-                                <span>Branding projects</span>
+                                <span>Ready to tell us</span> <br>
+                                <span>about your project?</span>
                             </div>
-                            <a href="/works.html" class="hide-cursor" id="circle-footer">
+                            <a href="/Contact.html" class="hide-cursor" id="circle-footer">
                                 <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
@@ -483,48 +552,41 @@
                                         283 St, Ward 19, District 1, HCM City
                                     </div>
                                 </div>
-                                <a href="/Contact.html" class="footer-button">
-                                    <div class="project-button">
-                                        <div class="button">
-                                            <div class="button__filler"></div>
-                                            <span class="button__text">
-                                                <span class="button__text-inner">Start a project</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
                                 <div class="footer-times">
                                     <div class="footer-usa">
-                                        <div id="time-usa"></div>
-                                        <div>PST, USA</div>
+                                        <div id="time-sf"></div>
+                                        <div>PST,SF</div>
+                                    </div>
+                                    <div class="footer-usa">
+                                        <div id="time-texas"></div>
+                                        <div>CST,TX</div>
+                                    </div>
+                                    <div class="footer-usa">
+                                        <div id="time-atlanta"></div>
+                                        <div>EST,ATL</div>
                                     </div>
                                     <div class="footer-usa">
                                         <div id="time-vietnam"></div>
-                                        <div>Vietnam</div>
-                                    </div>
-                                    <div class="footer-usa">
-                                        <div id="time-tokyo"></div>
-                                        <div>Tokyo</div>
+                                        <div>HCMC,VN</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="footer-end">
                                 <div class="footer-private">
                                     <div class="footer-policy ">
-                                        <a class="hover-footer" href="#">Privacy Policy</a>
+                                        <a class="hover" href="#">Privacy Policy</a>
                                     </div>
                                     <div class="footer-copyrights">
-                                        <a class="hover-footer" href="#">Copyrights</a>
+                                        <a class="hover" href="#">Copyrights</a>
                                     </div>
                                 </div>
-                                <div class="footer-sub hover-footer">
+                                <div class="footer-sub hover">
                                     Subscribe to our Newsletter
                                 </div>
                                 <div class="footer-social">
-                                    <a class="hover-footer" href="https://www.facebook.com/alignlab">Facebook</a>
-                                    <a class="hover-footer"
-                                        href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
-                                    <a class="hover-footer" href="https://www.instagram.com/align.vn/">Instagram</a>
+                                    <a class="hover" href="https://www.facebook.com/alignlab">Facebook</a>
+                                    <a class="hover" href="https://www.linkedin.com/company/alignvn/">Linkedin</a>
+                                    <a class="hover" href="https://www.instagram.com/align.vn/">Instagram</a>
                                 </div>
                             </div>
                         </div>
@@ -551,10 +613,17 @@
 
 
 
+    <!-- Locomotive JS -->
     <script src="/App/Js/Locomotive/index.js"></script>
+    <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js"></script>
+    <!-- Splitting JS -->
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS -->
     <script src="/App/Js/index.js" type="module"></script>
 </body>
 
