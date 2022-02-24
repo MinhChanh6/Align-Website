@@ -4,9 +4,6 @@ export default function createdAnimation() {
         const categoriesItems = document.querySelectorAll('.categories-link');
         const worksSlogan = document.querySelector('.works-slogan')
 
-
-
-
         if (categoriesItems) {
             const introHomeTimeline = gsap.timeline();
             introHomeTimeline.from([categoriesItems], 1.1, {

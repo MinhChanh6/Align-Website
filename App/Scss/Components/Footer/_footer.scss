@@ -53,6 +53,13 @@
         margin-top: auto;
     }
 
+    &-address {
+        > a > span:nth-child(1) {
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    }
+
     &-body {
         display: flex;
         padding-bottom: 75px;

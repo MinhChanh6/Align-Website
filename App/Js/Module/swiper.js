@@ -19,6 +19,7 @@ export default function createSwiper() {
     if (mainSwiper) {
         mainSwiper.addEventListener('click', () => {
             function handleCursor() {
+
                 gsap.fromTo('.js-cursor-text', 0.7, {
                     yPercent: 0,
                     ease: 'power4',

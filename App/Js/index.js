@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     handleCheckBox();
     createdAnimation();
     createdProcessBar();
-    Splitting();
+    Splitting({by: 'words'});
     createLightGallarey();
     createSwiper();
 });

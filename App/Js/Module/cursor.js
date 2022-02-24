@@ -131,6 +131,11 @@ export default function customizeCursor() {
         const handleClickCursor = (e) => {
             if (e.type === 'mouseenter') {
 
+                gsap.killTweensOf('.js-cursor-text');
+                gsap.killTweensOf('.js-cursor-text__clone');
+                gsap.killTweensOf(cursorFollow)
+
+
                 gsap.to(cursorFollow, 0.3, {
                     scale: 2.5,
                 })
@@ -143,6 +148,12 @@ export default function customizeCursor() {
                 gsap.set('.js-cursor-text__clone', { yPercent: -100 })
                 gsap.fromTo('.js-cursor-text', 0.4, { yPercent: 100, ease: 'power4.out' }, { yPercent: 0, ease: 'power4.out' }, "-=0.05")
             } else if (e.type === 'mouseleave') {
+
+                gsap.killTweensOf('.js-cursor-text');
+                gsap.killTweensOf('.js-cursor-text__clone');
+                gsap.killTweensOf(cursorFollow)
+
+
                 gsap.to(cursorFollow, 0.3, {
                     scale: 0.8,
                 })

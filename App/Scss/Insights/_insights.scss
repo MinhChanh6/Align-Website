@@ -114,14 +114,14 @@
         &:hover {
             > .rto-box > img {
                 transform: scale(1.2);
-                transition: transform .4s linear;
+                transition: transform .6s ease;
             }
         }
         > .rto-box {
             margin-bottom: 2.7rem;
         }
         > .rto-box > img {
-            transition: transform .2s linear;
+            transition: transform .6s ease;
         }
 
         &:nth-child(1),

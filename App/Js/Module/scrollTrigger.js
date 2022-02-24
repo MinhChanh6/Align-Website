@@ -57,8 +57,7 @@ export default function createdScrollTrigger() {
                     start: 'top 40%',
                 }
             });
-            servicesQuoteTimeline.from('.services-quote > span > .word', 1.25, { y: 150, opacity: 0, stagger: { amount: 0.2 }, delay: 0.2, ease: "power4.out" }, "-=2")
-
+            servicesQuoteTimeline.from('.services-quote > span > .word', 1, { y: 150, opacity: 0, stagger: { amount: 0.1 }, delay: 0.2, ease: "power4.out" }, "-=2")
         }
 
 
@@ -95,7 +94,7 @@ export default function createdScrollTrigger() {
             })
             scrollClients.to('.line', 0.4, { width: '100%', stagger: 0.25 })
             scrollClients.fromTo('.marque', 30, { x: '0%' }, { x: -listIcon.offsetWidth, ease: Linear.easeNone, repeat: -1, }, "start-=0.7");
-            scrollClients.fromTo('.marqueForward', 60, {
+            scrollClients.fromTo('.marqueForward', 120, {
                 x: '-250%'
             }, {
                 x: listIcon.offsetWidth,
@@ -121,14 +120,9 @@ export default function createdScrollTrigger() {
                         scrub: true,
                     }
                 })
-                parallax.from(imageParallax, {
-                    yPercent: -10,
-                    ease: "none",
-                })
-                parallax.to(imageParallax, {
-                    yPercent: 10,
-                    ease: "none",
-                })
+                parallax.fromTo(imageParallax, 
+                    {yPercent:-20, ease: "none"},
+                    {yPercent:20, ease: "none"})
             })
         }
         //Footer Section 
@@ -146,28 +140,6 @@ export default function createdScrollTrigger() {
             scrub: true,
         })
 
-        //Story Section
-        const storySection = document.querySelector('.story');
-        const storyDescList = gsap.utils.toArray('.story-desc');
-        if (storySection) {
-            storyDescList.forEach((item) => {
-                const storyDescItem = item.querySelectorAll('.word')
-                const storySectionTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: storyDescItem,
-                        top: 'top',
-                        end: 'bottom bottom',
-                    }
-                })
-                storySectionTimeline.from(storyDescItem, 1.5, {
-                    opacity: 0,
-                    y: 150,
-                    ease: "power4.out",
-                    stagger: { amount: 0.3 }
-                })
-            })
-
-        }
     })
 
 

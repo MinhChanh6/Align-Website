@@ -13,8 +13,8 @@ export default function createdMagneticButton() {
             const tl = gsap.timeline();
             button.classList.add('button-hover')
 
-            gsap.killTweensOf(filter);
-            gsap.killTweensOf(textInner);
+            tl.killTweensOf(filter);
+            tl.killTweensOf(textInner);
 
 
             tl.to(cursorFollow, 0.1, {
@@ -43,8 +43,8 @@ export default function createdMagneticButton() {
 
             const tl = gsap.timeline();
 
-            gsap.killTweensOf(filter);
-            gsap.killTweensOf(textInner);
+            tl.killTweensOf(filter);
+            tl.killTweensOf(textInner);
 
 
             tl.to(cursorFollow, 0.1, {
