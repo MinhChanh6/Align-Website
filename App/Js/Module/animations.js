@@ -34,9 +34,9 @@ export default function createdAnimation() {
             const introAboutTimeline = gsap.timeline();
             introAboutTimeline.from('.about-title > span > .word', 1.25, {
                 opacity: 0,
-                y: 200,
+                y: 100,
                 ease: "power4.out",
-                stagger: { amount: 0.2 }
+                stagger: { amount: 0.1 }
             });
         }
     })

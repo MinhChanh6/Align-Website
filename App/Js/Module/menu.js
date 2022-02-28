@@ -12,35 +12,27 @@ export default function handleMenu() {
     const svgIcon = document.getElementById('circle');
     const svgArrow = document.getElementById('arrow');
 
-    menuTimeLine.to(menu, 0.12, {
-        right: '0',
-    })
-
-
-    menuTimeLine.from(menuSocialItems, {
-        duration: 0.2,
-        opacity: 0,
-    }, "-=0.2");
-
-
-    menuTimeLine.from(menuItems, {
-        duration: 0.3,
-        opacity: 0,
-        y: 10,
-        stagger: 0.05,
-        ease: 'expo.inOut',
-    }, "=0.15");
-
-
-
-
-    menuTimeLine.reverse(-2);
 
     const handleOpenMenu = () => {
-        menuTimeLine.reversed(!menuTimeLine.reversed());
+
+        menu.classList.toggle('active');
+
+        menuTimeLine.from(menuSocialItems, {
+            duration: 0.2,
+            opacity: 0,
+        }, "-=0.2");
+
+        menuTimeLine.from(menuItems, {
+            duration: 0.2,
+            opacity: 0,
+            y: 10,
+            stagger: 0.05,
+            ease: 'power4',
+        }, "=0.15");
     }
+
+
     burgerMenuClose.addEventListener('click', handleOpenMenu);
     burgerMenu.addEventListener('click', handleOpenMenu);
-
 
 }

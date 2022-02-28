@@ -16,6 +16,8 @@ import createShowMore from './Module/showMore.js';
 import createdProcessBar from './Module/processBar.js';
 import createLightGallarey from './Module/lightGallarey.js';
 import createSwiper from './Module/swiper.js';
+import Canvas from './Module/canvas.js';
+import TextScramble from './Module/scrambleText.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     gsap.to("body", 0, { css: { visibility: "visible" } });
@@ -27,7 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
     createdAutoChangeText();
     createLoading();
     handleMenu();
-    createCanvas();
     customizeCursor();
     createdButton();
     createdScrollTrigger();
@@ -38,7 +39,50 @@ window.addEventListener('DOMContentLoaded', () => {
     handleCheckBox();
     createdAnimation();
     createdProcessBar();
-    Splitting({by: 'words'});
+    Splitting({ by: 'lines' });
     createLightGallarey();
     createSwiper();
+
+    const phrasesSub = [
+        'Creative',
+        'Design',
+        'UX Design'
+    ]
+
+    const phrasesSubClone = [
+        'Agency',
+        'with strategy',
+        '& research',
+    ]
+
+    const subEl = document.querySelector('.canvas1-subtitle')
+    const subElClone = document.querySelector('.canvas1-subtitle__clone')
+    const subText = new TextScramble(subEl)
+    const subClone = new TextScramble(subElClone)
+
+
+    let counterSub = 0
+    const animeSub = () => {
+        subText.setText(phrasesSub[counterSub]).then(() => {
+            setTimeout(animeSub, 3500)
+        })
+        counterSub = (counterSub + 1) % phrasesSub.length
+    }
+
+    let counterSubClone = 0
+    const animeSubClone = () => {
+        subClone.setText(phrasesSubClone[counterSubClone]).then(() => {
+            setTimeout(animeSubClone, 3500)
+        })
+        counterSubClone = (counterSubClone + 1) % phrasesSubClone.length
+    }
+
+    setTimeout(() => {
+        animeSub()
+        animeSubClone()
+    }, 5000)
+
+
+    new Canvas().init();
+
 });

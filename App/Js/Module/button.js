@@ -17,9 +17,6 @@ export default function createdMagneticButton() {
             tl.killTweensOf(textInner);
 
 
-            tl.to(cursorFollow, 0.1, {
-                scale: 0
-            })
             tl.to(filter, 0.3, {
                 ease: 'Power3.easeOut',
                 startAt: { y: '75%' },
@@ -46,10 +43,6 @@ export default function createdMagneticButton() {
             tl.killTweensOf(filter);
             tl.killTweensOf(textInner);
 
-
-            tl.to(cursorFollow, 0.1, {
-                scale: 0.8
-            })
             tl.to(filter, 0.3, {
                 ease: 'Power3.easeOut',
                 y: '-75%'

@@ -5,7 +5,11 @@
     right: -100%;
     width: calc(100%*6/12);
     display: flex;
-    transition: $transition;
+    transition: all .4s ease-out;
+    &.active {
+        right: 0;
+        transition: all .4s ease-out;
+    }
     &-black {
         background-color: $black;
         width: 55%;
@@ -80,8 +84,7 @@
             position: relative;
             line-height: 1.2;
             > span {
-                display: block;
-                
+                display: inline-block;
                 color: $white;
                 font-size: 2.5vw;
                 text-align: left;

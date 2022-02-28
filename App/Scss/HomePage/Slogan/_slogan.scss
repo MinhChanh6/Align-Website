@@ -80,6 +80,7 @@
             &__content {
                 font-size: 1.4rem;
 
+
                 > a >  img {
                     width: 1.2rem;
                 }
@@ -93,5 +94,11 @@
             line-height: 150%;
         }
 
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .slogan-award__content {
+        font-size: 1.6rem;
     }
 }

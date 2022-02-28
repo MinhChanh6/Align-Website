@@ -2,10 +2,7 @@ export default function customizeCursor() {
     const cursorFollow = document.querySelector('.cursor-follow');
     const cursorView = document.querySelector('.cursor-view');
     const cursorClick = document.querySelector('.cursor-click')
-    const categoriesItems = document.querySelectorAll('.categories-item');
-    const categoriesImg = document.querySelector('.categories-img');
     const projectItems = document.querySelectorAll('.project-item')
-    const serviceHeadings = document.querySelectorAll('.services-item__heading');
     const hoverElement = document.querySelectorAll('.hover');
     const hideCursors = document.querySelectorAll('.hide-cursor');
     const burgerMenuClose = document.querySelector('.menu-black__close');
@@ -37,54 +34,6 @@ export default function customizeCursor() {
         item.addEventListener('mouseleave', handleHoverOut)
     })
 
-    serviceHeadings.forEach((item) => {
-        const arrow = item.querySelector('.services-item__arrow > img')
-
-        function handleMouseTitleIn() {
-
-            arrow.classList.add('active')
-            gsap.to(cursorFollow, 0.3, {
-                scale: 0,
-            })
-
-            gsap.to(arrow, 0.3, { scale: 0.7 })
-        }
-        function handleMouseTitleOut() {
-            gsap.to(cursorFollow, 0.3, {
-                scale: 0.8,
-            })
-
-            gsap.to(arrow, 0.3, { scale: 1 })
-        }
-
-        item.addEventListener('mouseenter', handleMouseTitleIn)
-        item.addEventListener('mouseleave', handleMouseTitleOut)
-    })
-
-    categoriesItems.forEach((item, index) => {
-        item.addEventListener('mouseenter', function (e) {
-            let imageSrc = e.target.dataset.src;
-            gsap.to(cursorFollow, 0.3, {
-                scale: 3,
-            })
-            categoriesImg.style.zIndex = "99";
-
-            gsap.set('.categories-img > img', {
-                attr: { src: imageSrc }
-            })
-            gsap.to('.categories-img', { autoAlpha: 1 })
-            gsap.to('.categories-img > img ', { scale: 1 })
-        })
-
-        item.addEventListener('mouseleave', function () {
-            gsap.to(cursorFollow, 0.3, {
-                scale: 0.8,
-            })
-            categoriesImg.style.zIndex = "-1";
-            gsap.to('.categories-img', { autoAlpha: 0 })
-            gsap.to('.categories-img > img ', { scale: 0.5 })
-        })
-    })
 
     projectItems.forEach(item => {
         function handleMouseViewIn() {

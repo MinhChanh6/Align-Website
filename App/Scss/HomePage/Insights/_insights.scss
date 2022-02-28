@@ -21,10 +21,13 @@
         overflow: hidden;
         height: 0;
         padding-bottom: 66.84118673647468%;
+        @include breakpoint-down(medium) {
+            padding-bottom: 56.25%;
+        }
         &:hover .project-overlay{
-            width: 50%;
+            transform: scaleX(100%);
             opacity: 1;
-            transition: all .3s linear;
+            transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
         }
 
         > img {

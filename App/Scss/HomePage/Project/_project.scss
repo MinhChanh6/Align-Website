@@ -59,6 +59,10 @@
         z-index: 2;
         height: 0;
         padding-bottom: 66.84118673647468%;
+
+        @include breakpoint-down(medium) {
+            padding-bottom: 56.25%;
+        }
         > img {
             position: absolute;
             top: 0;
@@ -69,7 +73,11 @@
         }
 
     }
-
+    &-item:hover .project-overlay{
+        transform: scaleX(100%);
+        opacity: 1;
+        transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
+    }
     &-layer {
         position: absolute;
         right: 0;
@@ -79,11 +87,7 @@
         z-index: 2;
     }
 
-    &-item:hover .project-overlay{
-        transform: scaleX(100%);
-        opacity: 1;
-        transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
-    }
+
     &-item:nth-child(1) {
         position: relative;
         grid-column: 1/9;

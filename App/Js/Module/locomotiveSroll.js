@@ -4,7 +4,7 @@ const scrollContainer = document.querySelector('[data-scroll-container]');
 export const scroller = new LocomotiveScroll({
     el: scrollContainer,
     smooth: true,
-    touchMultiplier: 2.5,
+    lerp: 0.07,
     tablet: {
         smooth: false,
     },

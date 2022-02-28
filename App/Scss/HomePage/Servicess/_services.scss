@@ -171,9 +171,6 @@
     .service-item__desc {
         font-size: .9375vw;
     }
-    .services-title {
-        line-height: 1;
-    }
 }
 
 @media (min-width: 1920px) {
@@ -186,6 +183,11 @@
     .services-item__arrow {
         width: 5.75rem;
         height: 5.75rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .services-title {
+        line-height: 1;
     }
 }
 @include breakpoint-down(medium) {

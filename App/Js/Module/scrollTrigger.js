@@ -57,7 +57,7 @@ export default function createdScrollTrigger() {
                     start: 'top 40%',
                 }
             });
-            servicesQuoteTimeline.from('.services-quote > span > .word', 1, { y: 150, opacity: 0, stagger: { amount: 0.1 }, delay: 0.2, ease: "power4.out" }, "-=2")
+            servicesQuoteTimeline.from('.services-quote > span > .word', 1, { y: 150, stagger: { amount: 0.1 }, delay: 0.2, ease: "power4.out" }, "-=2")
         }
 
 
@@ -120,9 +120,9 @@ export default function createdScrollTrigger() {
                         scrub: true,
                     }
                 })
-                parallax.fromTo(imageParallax, 
-                    {yPercent:-20, ease: "none"},
-                    {yPercent:20, ease: "none"})
+                parallax.fromTo(imageParallax,
+                    { yPercent: -20, ease: "none" },
+                    { yPercent: 20, ease: "none" })
             })
         }
         //Footer Section 
@@ -139,6 +139,20 @@ export default function createdScrollTrigger() {
             animation: uncover,
             scrub: true,
         })
+
+
+        //About Desc
+
+        const aboutDesc = document.querySelector('.story-desc');
+        if (aboutDesc) {
+            const aboutDescTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: aboutDesc,
+                    start: 'top 40%',
+                }
+            });
+            aboutDescTimeline.from('.story-desc > span > .word', 1, { y: 100, stagger: { amount: 0.3 }, ease: "power4.out" }, "-=2")
+        }
 
     })
 
