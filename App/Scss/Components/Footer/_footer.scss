@@ -279,6 +279,12 @@
         &-social {
             width: 30%;
         }
+        &-contact {
+            margin-bottom: 40px;
+        }
+        &-body {
+            flex-direction: column;
+        }
     }
 }
 @include breakpoint-down(small) {
@@ -301,7 +307,6 @@
             }
         }
         &-body {
-            flex-direction: column;
             padding-bottom: 40px;
         }
         &-times {

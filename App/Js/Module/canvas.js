@@ -23,10 +23,10 @@ export default class Canvas {
         this.scene = new THREE.Scene();
         const canvas = document.getElementById('canvas')
 
-        this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        this.renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
 
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(window.devicePixelRatio);
+        this.renderer.setPixelRatio(window.devicePixelRatio * 0.6);
 
 
         this.renderer.shadowMap.enabled = true;
@@ -174,7 +174,7 @@ export default class Canvas {
                         const y = map(mouseDistance, 7, 0, 0, 6);
                         TweenMax.to(mesh.position, .3, { y: y < 1 ? 1 : y });
 
-                        const scaleFactor = mesh.position.y / 1.2;
+                        const scaleFactor = mesh.position.y / 1.75;
                         const scale = scaleFactor < 1 ? 1 : scaleFactor;
                         TweenMax.to(mesh.scale, .3, {
                             ease: Expo.easeOut,

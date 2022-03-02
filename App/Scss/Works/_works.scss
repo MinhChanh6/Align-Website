@@ -26,7 +26,18 @@
         }
     }
 }
-
+@media screen and (max-width: 1440px) {
+    .works {
+        &-slogan{
+            > a {
+                margin-right: 2rem;
+            }
+            > .slogan-award__content {
+                font-size: 2rem;
+            }
+        }
+    }
+}
 @include breakpoint-down(medium) {
     .works {
         &-title {
