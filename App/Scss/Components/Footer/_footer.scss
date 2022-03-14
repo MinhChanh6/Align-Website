@@ -33,8 +33,9 @@
 
 
             @include breakpoint-down(small) {
-                height: 96px;
-                width: 96px;
+                height: 65px;
+                width: 65px;
+                margin-top: unset;
             }
         }
 
@@ -42,7 +43,7 @@
             max-width: 1053px;
             font-size: 11rem;
             line-height: 120%;
-
+            width: 80%;
             > span {
                 display: inline-block;
             }
@@ -178,6 +179,9 @@
     border: 3.35px solid $black;
     border-radius: 50%;
     will-change: transform;
+    @include breakpoint-down(small) {
+        border: 2.35px solid $black;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -255,7 +259,6 @@
             padding: 85px 0 65px 0;
         }
         &-heading {
-            flex-direction: column;
             &__text {
                 font-size:7rem;
             }

@@ -36,7 +36,7 @@ export default function createdScrollTrigger() {
                 scrollTrigger: {
                     trigger: '.services-section',
                     start: 'top 30%',
-                    end: '70% 40%',
+                    end: 'bottom 10%',
                     toggleActions: "play none none reverse",
                     onEnter: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#1500BB' }),
                     onLeave: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#F7F7F7' }),
@@ -46,6 +46,23 @@ export default function createdScrollTrigger() {
             })
             scrollServices.to('.services-item__arrow', { opacity: 1 })
             scrollServices.to(['.services-title', '.services-item__title', '.services-item__desc'], { color: '#FFFFFF' }, "-=0.5")
+        }
+
+        // DataSociety 
+        const dataSection = document.querySelector('.data');
+        if (dataSection) {
+            const dataScroll = gsap.timeline({
+                scrollTrigger: {
+                    trigger: dataSection,
+                    start: '25% center',
+                    toggleActions: "play none none reverse",
+                    onEnter: () => gsap.to(['.wrapper'], { backgroundColor: '#261343' }),
+                    onLeave: () => gsap.to(['.wrapper'], { backgroundColor: '#F7F7F7' }),
+                    onLeaveBack: () => gsap.to(['.wrapper'], { backgroundColor: '#F7F7F7' }),
+                    onEnterBack: () => gsap.to(['.wrapper'], { backgroundColor: '#261343' })
+                }
+            })
+            dataScroll.to('.data-text', { color: '#FFFFFF' }, "-=0.5")
         }
 
         //Services Quote 
@@ -88,8 +105,8 @@ export default function createdScrollTrigger() {
             const scrollClients = gsap.timeline({
                 scrollTrigger: {
                     trigger: '.clients',
-                    start: 'top 30%',
-                    end: 'bottom 30%',
+                    start: 'top top',
+                    toggleClass: { targets: ".clients-list__marque", className: "opacity-marquee" },
                 }
             })
             scrollClients.to('.line', 0.4, { width: '100%', stagger: 0.25 })
@@ -102,7 +119,6 @@ export default function createdScrollTrigger() {
                 repeat: -1,
             }, "start-=0.7")
         }
-
 
 
 
@@ -135,7 +151,7 @@ export default function createdScrollTrigger() {
         ScrollTrigger.create({
             trigger: '.last-section',
             start: 'bottom bottom',
-            end: '+=90%',
+            end: '+=70%',
             animation: uncover,
             scrub: true,
         })
@@ -154,6 +170,62 @@ export default function createdScrollTrigger() {
             aboutDescTimeline.from('.story-desc > span > .word', 1, { y: 100, stagger: { amount: 0.3 }, ease: "power4.out" }, "-=2")
         }
 
+        // Lottie animation 
+        const lottieLogo = document.getElementById('lottie');
+
+
+        const ScrollLottie = (obj) => {
+
+            let anim = lottie.loadAnimation({
+                container: obj.target,
+                renderer: 'svg',
+                loop: false,
+                autoplay: false,
+                path: obj.path
+            });
+
+            // let direction = -1;
+            // lottieLogo.addEventListener('mouseenter', function () {
+            //     anim.setDirection(-direction)
+            //     anim.play();
+            // })
+            // lottieLogo.addEventListener('mouseleave', function () {
+            //     anim.setDirection(direction)
+            //     anim.play();
+            // })
+
+            let timeObj = { currentFrame: 0 }
+            let endString = (obj.speed === "slow") ? "+=2000" : (obj.speed === "medium") ? "+=1000" : (obj.speed === undefined) ? "+=1250" : "+=500";
+            ScrollTrigger.create({
+                trigger: obj.target,
+                scrub: true,
+                pin: true,
+                start: "top",
+                end: "+=500",
+                onUpdate: self => {
+                    if (obj.duration) {
+                        gsap.to(timeObj, {
+                            duration: obj.duration,
+                            currentFrame: (Math.floor(self.progress * (anim.totalFrames))),
+                            onUpdate: () => {
+                                anim.goToAndStop(timeObj.currentFrame, true)
+                            },
+                            ease: 'expo'
+                        })
+                    } else {
+                        anim.goToAndStop(self.progress * (anim.totalFrames), true)
+                    }
+                }
+            });
+
+        }
+
+
+        ScrollLottie({
+            target: lottieLogo,
+            path: '/Images/LogoLottie.json',
+            duration: 1,
+        })
     })
 
 

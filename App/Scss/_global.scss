@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600&display=swap');
 
 ::selection {
     background:$yellow; 
@@ -65,8 +64,8 @@ canvas {
     }
     &-subtitle,
     &-subtitle__clone{
+        font-family: "Saira", sans-serif;
         display: inline-block;
-        font-family: 'Space Mono', monospace;
         -webkit-text-fill-color: $yellow; 
         -webkit-text-stroke-width: 3.5px;
         -webkit-text-stroke-color: $black;
@@ -135,6 +134,17 @@ canvas {
 
     }
     &-view {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        opacity: 0;
+        color: $yellow;
+    }
+    &-soon {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -238,6 +248,11 @@ canvas {
 .pd0 {
     padding: unset !important;
 }
+.m-auto {
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
 .mt {
     padding-top: 15rem;
 
@@ -256,6 +271,22 @@ canvas {
 }
 .order-3 {
     @include breakpoint-down(small){order: 3;}
+}
+.fw-bold {
+    font-weight: 600;
+}
+.italic {
+    font-style: italic;
+}
+.yellow {
+    color: $yellow;
+}
+.li {
+    list-style-type: disc;
+}
+.df-container {
+    display: block;
+    background-color: #f7f7f7 !important;
 }
 .rto-box {
     position: relative;
@@ -303,13 +334,13 @@ canvas {
 }
 @media screen and (max-width: 1280px) {
     .container {
-        padding: 0 50px;
+        padding: 0 40px;
     }
 }
 
 @media screen and (max-width: 1024px) {
     .container {
-        padding: 0 30px;
+        padding: 0 20px;
     }
     .cursor-follow {
         display: none;
@@ -318,6 +349,6 @@ canvas {
 
 @include breakpoint-down(medium) {
     .container {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 }

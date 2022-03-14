@@ -18,12 +18,12 @@ export default function handleMenu() {
         menu.classList.toggle('active');
 
         menuTimeLine.from(menuSocialItems, {
-            duration: 0.2,
+            duration: 0.3,
             opacity: 0,
         }, "-=0.2");
 
         menuTimeLine.from(menuItems, {
-            duration: 0.2,
+            duration: 0.3,
             opacity: 0,
             y: 10,
             stagger: 0.05,

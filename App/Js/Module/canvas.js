@@ -1,8 +1,9 @@
-import Cone from '../elements/cone.js';
-import Torus from '../elements/torus.js';
-import Cylinder from '../elements/cylinder.js';
+import Cone from '../Elements/cone.js';
+import Torus from '../Elements/torus.js';
+import Cylinder from '../Elements/cylinder.js';
 import { radians, map, distance } from '../helpers.js';
 export default class Canvas {
+
     setup() {
         this.gutter = { size: 4 };
         this.meshes = [];
@@ -22,16 +23,15 @@ export default class Canvas {
     createScene() {
         this.scene = new THREE.Scene();
         const canvas = document.getElementById('canvas')
-
+        if (!canvas) return;
         this.renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
 
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(window.devicePixelRatio * 0.6);
+        this.renderer.setPixelRatio(window.devicePixelRatio);
 
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
         canvas.appendChild(this.renderer.domElement);
     }
 
@@ -259,7 +259,7 @@ export default class Canvas {
 
     animate() {
         this.draw();
-
+        if (!this.renderer) return;
         this.renderer.render(this.scene, this.camera);
 
         requestAnimationFrame(this.animate.bind(this));

@@ -4,10 +4,8 @@
         margin-bottom: 2rem;
     }
     &-parallax {
-        height: 710px;
+        padding-bottom: 39.97747747747747%;
         margin-top: 2rem;
-        
-
     }
     &-flex {
         display: flex;
@@ -23,9 +21,8 @@
     &-desc {
         font-size: 2.4rem;
         line-height: 150%;
-        width: 50%;
-        margin-top: 8rem;
-        margin-bottom: 8rem;
+        width: 70%;
+        margin: 8rem auto;
 
         @include breakpoint-down(medium) {
             font-size: 2.2rem;
@@ -36,6 +33,18 @@
             font-size: 1.8rem;
 
         }
+
+        &__content {
+            margin-bottom: 20px;
+        }
+    }
+
+    &-h2 {
+        font-weight: 500;
+        font-size: 3rem;
+        margin: 8rem 0;
+        max-width: 900px;
+        line-height: 150%;
     }
 }
 

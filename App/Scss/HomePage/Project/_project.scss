@@ -19,7 +19,7 @@
 
     &-overlay {
         top: 0;
-        opacity: 0;
+        left: -100%;
         position: absolute;
         height: 100%;
         width: 50%;
@@ -27,7 +27,7 @@
         transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
         background-color: $yellow;
         z-index: 20;
-        transform: scaleX(0);
+        // transform: scaleX(0);
 
         &__wrap {
             padding-left: 10%;
@@ -38,18 +38,18 @@
         }
 
         &__field {
-            font-size: 2.4rem;
+            font-size: 1.250vw;
         }
 
         &__bottom {
             margin-top: auto;
-            font-size: 2.4rem;
+            font-size: 1.250vw;
         }
 
 
 
         &__title {
-            font-size: 3.6rem;
+            font-size: 1.875vw;
             padding-bottom: 1.6rem;
         }
     }
@@ -74,8 +74,7 @@
 
     }
     &-item:hover .project-overlay{
-        transform: scaleX(100%);
-        opacity: 1;
+        left: 0;
         transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
     }
     &-layer {
@@ -118,7 +117,18 @@
 
     }
 }
-
+.sm-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    > video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 .title-small {
     font-size: 3.2rem;
 }

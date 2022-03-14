@@ -25,6 +25,10 @@
     align-items: center;
     position: relative;
 }
+.logo{
+    width: 77px;
+    height: 53px;
+}
 .logo > img{
     @include breakpoint-down(small) {
         max-width: 55px;
@@ -85,18 +89,18 @@
 
 @media screen and (max-width: 1280px) {
     .header {
-        padding: 0 50px;
+        padding: 0 40px;
     }
 }
 
 @media screen and (max-width: 1024px) {
     .header {
-        padding: 0 30px;
+        padding: 0 20px;
     }
 }
 
 @include breakpoint-down(medium) {
     .header {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 }
