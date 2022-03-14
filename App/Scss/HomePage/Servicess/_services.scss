@@ -11,12 +11,13 @@
         font-size: 9.6rem;
         line-height: .55;
         color: $black;
+        width: calc(100%*4/12);
     }
 
     &-list {
         display: flex;
         justify-content: space-between;
-        width: calc(100%*8/12);
+        width: calc(100%*9/12);
     }
 
     &-item {

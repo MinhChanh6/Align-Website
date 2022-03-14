@@ -88,6 +88,7 @@
         }
     }
     &-input {
+        position: relative;
         width: 50%;
         border-bottom: 1px solid $darkGrey;
         margin-bottom: 21px;
@@ -170,6 +171,7 @@
         }
     }
     &-checkbox {
+        position: relative;
         &__group {
             display: inline-block;
             > input {
@@ -204,6 +206,14 @@
                 margin-bottom: 75px;
 
             }
+        }
+        &__hint {
+            opacity: 0;
+            left: 0;
+            color: red;
+            font-size: 1.8rem;
+            position: absolute;
+            bottom: -100%;
         }
     }
     &-button {

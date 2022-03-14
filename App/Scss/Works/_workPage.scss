@@ -33,8 +33,11 @@
     margin-bottom: 16rem;
 
 
-    @include breakpoint-down(small) {
+    @include breakpoint-down(medium) {
         margin-bottom: 10rem;
+    }
+    @include breakpoint-down(small) {
+        margin-bottom: 7rem;
     }
 }
 .border-image {
@@ -89,7 +92,7 @@
     }
 }
 .mw-300{
-    max-width: calc(100%*3/12);
+    max-width: calc(100%*5/12);
 }
 //<<----- FURAS STYLE START ----->> // 
 .work1 {
@@ -296,6 +299,58 @@
     }
 }
 
+//<<----- DATA SOCIETY STYLE END ----->> //
+
+
+//<<----- ARDOR STYLE START ----->> //
+
+.ardor-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.ardor-banner {
+    transition: transform .3s ease-out;
+    &:hover {
+        transition: transform .3s ease-out;
+        transform: translateY(-50px);
+
+        @include breakpoint-down(small) {
+            transform: translateY(-25px);
+        }
+    }
+    &:not(:nth-of-type(1)) {
+        margin-left: 24px;
+
+        @include breakpoint-down(small) {
+            margin-left: 4px;
+        }
+    }
+    &:nth-of-type(1),
+    &:nth-of-type(4) {
+        width: calc(100%*3/12);
+        height: auto;
+    }
+    &:nth-of-type(2) {
+        width: calc(100%*2/12);
+        height: auto;
+        margin-top: 14rem;
+
+        @include breakpoint-down(small) {
+            margin-top: 4rem;
+        }
+    }
+    &:nth-of-type(3) {
+        width: calc(100%*4/12);
+        height: auto;
+    }
+    &:nth-of-type(4){
+        margin-top: 8.5rem;
+
+        @include breakpoint-down(small) {
+            margin-top: 2.5rem;
+        }
+    }
+}
 
 @media screen and(max-width: 1024px) {
     .ct-title {

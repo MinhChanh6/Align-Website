@@ -132,7 +132,11 @@
                                 <li class="contact-checkbox__group">
                                     <input type="checkbox" id="website" class="cb-type" value="Website" required>
                                     <label for="website">Website</label>
+                                    <div class="contact-checkbox__hint">
+                                        Choose tags is required
+                                    </div>
                                 </li>
+                                
                                 <li class="contact-checkbox__group">
                                     <input type="checkbox" id="brading" class="cb-type" value="Brading" required>
                                     <label for="brading">Branding</label>
@@ -149,20 +153,27 @@
                             </div>
                             <div class="contact-cv__name contact-input">
                                 <input type="text" name="Name" id="name" placeholder="Your name *">
+                                
                             </div>
                             <div class="contact-cv__company contact-input">
                                 <input type="text" name="Company" id="company" placeholder="Company *" required>
                             </div>
                             <div class="contact-cv__email contact-input">
                                 <input type="text" name="Email" id="email" placeholder="Email *" required>
+                                <div class="input-error">
+                                </div>
                             </div>
                             <div class="contact-cv__website contact-input">
                                 <input type="text" name="Website" id="Website" placeholder="Website (Optional)"
                                     required>
+                                    <div class="input-error">
+                                    </div>
                             </div>
                             <div class="contact-input">
                                 <textarea name="Tell us" id="message"
                                     placeholder="Tell us more about your project *"></textarea>
+                                    <div class="input-error">
+                                    </div>
                             </div>
                             <div class="contact-cv__attachment contact-input">
                                 <div>

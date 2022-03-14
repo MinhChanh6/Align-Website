@@ -17,12 +17,12 @@ export default function SmtpMail() {
         const cbBudget = document.querySelector('.cb-timeline:checked').value;
 
         const contactForm = document.getElementById('contact-form');
-
-        var file = document.getElementById('attachment').files[0];
-        var reader = new FileReader();
+        
+        const file = document.getElementById('attachment').files[0];
+        const reader = new FileReader();
         reader.readAsBinaryString(file);
         reader.onload = function () {
-            var dataUri = "data:" + file.type + ";base64," + btoa(reader.result);
+            const dataUri = "data:" + file.type + ";base64," + btoa(reader.result);
             Email.send({
                 Host: "smtp.gmail.com",
                 Username: "hominhchanh45@gmail.com",

@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
             animeSubClone()
         }, 5000)
 
-        new Canvas().init();
+        // new Canvas().init();
     }
 
 });
