@@ -47,46 +47,44 @@ window.addEventListener('DOMContentLoaded', () => {
     createLightGallarey();
     createSwiper();
     SmtpMail();
-    const phrasesSub = [
-        'Creative',
-        'Design',
-        'Web &'
-    ]
+    // const phrasesSub = [
+    //     'Creative',
+    //     'Design',
+    //     'Web &'
+    // ]
 
-    const phrasesSubClone = [
-        'Agency',
-        'with strategy',
-        'Brand Identity',
-    ]
+    // const phrasesSubClone = [
+    //     'Agency',
+    //     'with strategy',
+    //     'Brand Identity',
+    // ]
 
-    const subEl = document.querySelector('.canvas1-subtitle')
-    const subElClone = document.querySelector('.canvas1-subtitle__clone')
-    const subText = new TextScramble(subEl)
-    const subClone = new TextScramble(subElClone)
+    // const subEl = document.querySelector('.canvas1-subtitle')
+    // const subElClone = document.querySelector('.canvas1-subtitle__clone')
+    // const subText = new TextScramble(subEl)
+    // const subClone = new TextScramble(subElClone)
 
-    if (subEl || subElClone) {
-        let counterSub = 0
-        const animeSub = () => {
-            subText.setText(phrasesSub[counterSub]).then(() => {
-                setTimeout(animeSub, 3500)
-            })
-            counterSub = (counterSub + 1) % phrasesSub.length
-        }
+    // if (subEl || subElClone) {
+    //     let counterSub = 0
+    //     const animeSub = () => {
+    //         subText.setText(phrasesSub[counterSub]).then(() => {
+    //             setTimeout(animeSub, 3500)
+    //         })
+    //         counterSub = (counterSub + 1) % phrasesSub.length
+    //     }
 
-        let counterSubClone = 0
-        const animeSubClone = () => {
-            subClone.setText(phrasesSubClone[counterSubClone]).then(() => {
-                setTimeout(animeSubClone, 3500)
-            })
-            counterSubClone = (counterSubClone + 1) % phrasesSubClone.length
-        }
+    //     let counterSubClone = 0
+    //     const animeSubClone = () => {
+    //         subClone.setText(phrasesSubClone[counterSubClone]).then(() => {
+    //             setTimeout(animeSubClone, 3500)
+    //         })
+    //         counterSubClone = (counterSubClone + 1) % phrasesSubClone.length
+    //     }
 
-        setTimeout(() => {
-            animeSub()
-            animeSubClone()
-        }, 5000)
-
-        // new Canvas().init();
-    }
-
+    //     setTimeout(() => {
+    //         animeSub()
+    //         animeSubClone()
+    //     }, 5000)
+    // }
+    new Canvas().init();
 });

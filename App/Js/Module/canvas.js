@@ -132,7 +132,7 @@ export default class Canvas {
         }
 
         const centerX = -(this.grid.cols / 2) * this.gutter.size - 1;
-        const centerZ = -(this.grid.rows / 2) - .8;
+        const centerZ = -(this.grid.rows / 2) - 3.5;
 
         this.groupMesh.position.set(centerX, 0, centerZ);
 

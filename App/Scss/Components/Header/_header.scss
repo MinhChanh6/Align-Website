@@ -24,6 +24,22 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+
+    &-logo {
+        display: flex;
+        align-items: center;
+    }
+    &-ol {
+        position: relative;
+        overflow: hidden;
+        margin-left: 20px;
+
+        > span {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    }
+
 }
 .logo{
     width: 77px;

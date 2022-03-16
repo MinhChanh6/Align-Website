@@ -93,9 +93,6 @@ export default function createdScrollTrigger() {
                 ease: "power4.out",
                 stagger: { amount: 0.2 }
             }, "-=2")
-            scrollSlogan.from(['.slogan-award__content', '.slogan-logo'], 0.7, {
-                opacity: 0
-            }, "-=2")
         }
 
         //Clients Section
@@ -184,22 +181,12 @@ export default function createdScrollTrigger() {
                 path: obj.path
             });
 
-            // let direction = -1;
-            // lottieLogo.addEventListener('mouseenter', function () {
-            //     anim.setDirection(-direction)
-            //     anim.play();
-            // })
-            // lottieLogo.addEventListener('mouseleave', function () {
-            //     anim.setDirection(direction)
-            //     anim.play();
-            // })
 
             let timeObj = { currentFrame: 0 }
             let endString = (obj.speed === "slow") ? "+=2000" : (obj.speed === "medium") ? "+=1000" : (obj.speed === undefined) ? "+=1250" : "+=500";
             ScrollTrigger.create({
                 trigger: obj.target,
                 scrub: true,
-                pin: true,
                 start: "top",
                 end: "+=500",
                 onUpdate: self => {
