@@ -257,3 +257,8 @@
         margin-bottom: 20px;
     }
 }
+@include breakpoint-down(small) {
+    .checkbox-mb {
+        margin-bottom: 5rem !important;
+    }
+}

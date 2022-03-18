@@ -27,8 +27,17 @@
     </div>
     <header class="header">
         <div class="nav">
-            <a href="/index.html" id="lottie" class="logo">
-            </a>
+            <div class="nav-logo">
+                <a href="/index.html" id="lottie" class="logo">
+
+                </a>
+
+                <span class="nav-ol">
+                    <span>BRANDING.</span>
+                    <span>WEBSITE.</span>
+                    <span>SEO.</span>
+                </span>
+            </div>
 
 
             <div class="burger hide-cursor">
@@ -93,7 +102,7 @@
                             <a href="/works.html" class="menu-black__link hover">
                                 <span>Branding</span>
                                 <span>Branding</span>
-                            </a>
+                            </a>i
                         </li>
                         <li class="menu-black__item">
                             <a href="/works.html" class="menu-black__link hover">
@@ -129,7 +138,7 @@
                                 What you need:
                             </div>
                             <ul class="contact-checkbox">
-                                <li class="contact-checkbox__group">
+                                <li class="contact-checkbox__group checkbox-mb">
                                     <input type="checkbox" id="website" class="cb-type" value="Website" required>
                                     <label for="website">Website</label>
                                     <div class="contact-checkbox__hint">
@@ -137,11 +146,11 @@
                                     </div>
                                 </li>
                                 
-                                <li class="contact-checkbox__group">
+                                <li class="contact-checkbox__group checkbox-mb">
                                     <input type="checkbox" id="brading" class="cb-type" value="Brading" required>
                                     <label for="brading">Branding</label>
                                 </li>
-                                <li class="contact-checkbox__group">
+                                <li class="contact-checkbox__group ">
                                     <input type="checkbox" id="seo" class="cb-type" value="SEO" required>
                                     <label for="seo">SEO</label>
                                 </li>
@@ -244,11 +253,11 @@
                     <div class="footer-wrap">
                         <div class="footer-outter">
                             <div class="footer-heading">
-                                <div class="footer-heading__text">
+                                <a href="/career.html" class="footer-heading__text">
                                     <span>Wanna</span> <br>
                                     <span>join ur team?</span>
-                                </div>
-                                <a href="/career.html" class="hide-cursor" id="circle-footer">
+                                </a>
+                                <a href="/career.html" class="hide-cursor hide-on-mobile" id="circle-footer">
                                     <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
@@ -330,21 +339,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer-form">
-                                <input type="text" placeholder="Add your email address">
-                                <a class="hide-cursor" id="circle-footer">
-                                    <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
-                                            stroke="black" stroke-width="1.12442" stroke-linecap="round"
-                                            id="arrow-footer" />
-                                        <path
-                                            d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
-                                            stroke="black" stroke-width="1.12442" stroke-linecap="round"
-                                            id="arrow-footer__clone" />
-                                    </svg>
-                                </a>
-                            </div>
+                            <form
+                            action="https://align.us14.list-manage.com/subscribe/post?u=5c43dcc9081fb93efbefd4d66&amp;id=f3ae99ddbd"
+                            method="post" id="mc-embedded-subscribe-form" class="validate footer-form" target="_blank"
+                            novalidate>
+                            <input type="email" placeholder="Add your email address" name="EMAIL" id="mce-EMAIL">
+                            <a onclick="document.getElementById('mc-embedded-subscribe-form').submit()"
+                                class="hide-cursor" id="circle-footer" value="Subscribe">
+                                <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
+                                        stroke="black" stroke-width="1.12442" stroke-linecap="round"
+                                        id="arrow-footer" />
+                                    <path
+                                        d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
+                                        stroke="black" stroke-width="1.12442" stroke-linecap="round"
+                                        id="arrow-footer__clone" />
+                                </svg>
+                            </a>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -352,7 +365,11 @@
         </div>
     </div>
 
-
+    <!-- Mailchimp -->
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>
+        (function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email';}(jQuery)); var $mcj = jQuery.noConflict(true);
+    </script>
     <!-- Locomotive JS -->
     <script src="/App/Js/Locomotive/index.js"></script>
     <!-- GSAP JS -->

@@ -19,7 +19,7 @@ export default function createdActiveForm() {
     if (applyButton) {
         applyButton.forEach((item) => {
             item.addEventListener('click', () => {
-                scroller.stop();
+                // scroller.stop();
                 popupModal.classList.add('active')
             })
         })

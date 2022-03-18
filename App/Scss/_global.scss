@@ -40,7 +40,7 @@ canvas {
 }
 
 .dud{
-    color: #757575;
+    color: $black;
 }
 #canvas {
     position: relative;
@@ -349,5 +349,11 @@ canvas {
 @include breakpoint-down(medium) {
     .container {
         padding: 0 15px;
+    }
+}
+
+.hide-on-mobile {
+    @include breakpoint-down(small) {
+        display: none !important;
     }
 }

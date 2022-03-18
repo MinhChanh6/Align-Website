@@ -1,17 +1,22 @@
+import TextScramble from './scrambleText.js';
 export default function createdAutoChangeText() {
 
     const words = ['fastest', 'seo'];
-    let counter = 0;
-    const el = document.querySelector('.works-words');
-    const handleFunc = setInterval(handleChangeText, 1000);
 
-    function handleChangeText() {
-        if (el) {
-            el.innerHTML = words[counter];
-            counter++
-            if (counter >= words.length) {
-                counter = 0
-            }
+    const el = document.querySelector('.works-words');
+    const subText = new TextScramble(el)
+
+    if (el) {
+        let counterSub = 0
+        const animeSub = () => {
+            subText.setText(words[counterSub]).then(() => {
+                setTimeout(animeSub, 1000)
+            })
+            counterSub = (counterSub + 1) % words.length
         }
+
+        setTimeout(() => {
+            animeSub()
+        }, 5000)
     }
 }

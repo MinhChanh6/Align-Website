@@ -5,9 +5,9 @@ import { radians, map, distance } from '../helpers.js';
 export default class Canvas {
 
     setup() {
-        this.gutter = { size: 4 };
+        this.gutter = { size: 4.4};
         this.meshes = [];
-        this.grid = { rows: 12, cols: 10 };
+        this.grid = { rows: 12, cols: 8 };
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.mouse3D = new THREE.Vector2();
@@ -131,7 +131,7 @@ export default class Canvas {
             }
         }
 
-        const centerX = -(this.grid.cols / 2) * this.gutter.size - 1;
+        const centerX = -(this.grid.cols / 2) * this.gutter.size  - 1;
         const centerZ = -(this.grid.rows / 2) - 3.5;
 
         this.groupMesh.position.set(centerX, 0, centerZ);

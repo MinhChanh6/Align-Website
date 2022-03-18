@@ -310,6 +310,10 @@
 }
 .ardor-banner {
     transition: transform .3s ease-out;
+
+    > img {
+        width: 100%;
+    }
     &:hover {
         transition: transform .3s ease-out;
         transform: translateY(-50px);

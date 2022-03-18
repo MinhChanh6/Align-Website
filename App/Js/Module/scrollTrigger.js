@@ -38,10 +38,10 @@ export default function createdScrollTrigger() {
                     start: 'top 30%',
                     end: 'bottom 10%',
                     toggleActions: "play none none reverse",
-                    onEnter: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#1500BB' }),
-                    onLeave: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#F7F7F7' }),
-                    onLeaveBack: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#F7F7F7' }),
-                    onEnterBack: () => gsap.to(['.wrapper', '.services-section'], { backgroundColor: '#1500BB' })
+                    onEnter: () => gsap.to(['.wrapper'], { backgroundColor: '#1500BB' }),
+                    onLeave: () => gsap.to(['.wrapper'], { backgroundColor: '#F7F7F7' }),
+                    onLeaveBack: () => gsap.to(['.wrapper'], { backgroundColor: '#F7F7F7' }),
+                    onEnterBack: () => gsap.to(['.wrapper'], { backgroundColor: '#1500BB' })
                 }
             })
             scrollServices.to('.services-item__arrow', { opacity: 1 })
@@ -103,10 +103,9 @@ export default function createdScrollTrigger() {
                 scrollTrigger: {
                     trigger: '.clients',
                     start: 'top top',
-                    toggleClass: { targets: ".clients-list__marque", className: "opacity-marquee" },
                 }
             })
-            scrollClients.to('.line', 0.4, { width: '100%', stagger: 0.25 })
+            scrollClients.to('.line', 0.4, { width: '100%', stagger: 0.25, })
             scrollClients.fromTo('.marque', 30, { x: '0%' }, { x: -listIcon.offsetWidth, ease: Linear.easeNone, repeat: -1, }, "start-=0.7");
             scrollClients.fromTo('.marqueForward', 120, {
                 x: '-250%'
@@ -116,6 +115,17 @@ export default function createdScrollTrigger() {
                 repeat: -1,
             }, "start-=0.7")
         }
+
+        const clientsMarque = document.querySelectorAll('.clients-marque');
+        if(clientsMarque) {
+            const listIconTimeLine = gsap.timeline({
+                scrollTrigger: {
+                    trigger: clientsMarque,
+                    start: 'top',
+                    toggleClass: { targets: '.clients-list__marque', className: 'opacity-marquee'},
+                }
+            })
+        } 
 
 
 
@@ -164,7 +174,7 @@ export default function createdScrollTrigger() {
                     start: 'top 40%',
                 }
             });
-            aboutDescTimeline.from('.story-desc > span > .word', 1, { y: 100, stagger: { amount: 0.3 }, ease: "power4.out" }, "-=2")
+            aboutDescTimeline.from('.story-desc > span > .word', 1, { opacity: 0, y: 100, stagger: { amount: 0.3 }, ease: "power4.out" }, "-=2")
         }
 
         // Lottie animation 
@@ -181,6 +191,16 @@ export default function createdScrollTrigger() {
                 path: obj.path
             });
 
+            // const directionMenu = 1;
+            // lottieLogo.addEventListener('mouseenter', (e) => {
+            //     anim.setDirection(-directionMenu);
+            //     anim.play();
+            // });
+
+            // lottieLogo.addEventListener('mouseleave', (e) => {
+            //     anim.setDirection(directionMenu);
+            //     anim.play();
+            // });
 
             let timeObj = { currentFrame: 0 }
             let endString = (obj.speed === "slow") ? "+=2000" : (obj.speed === "medium") ? "+=1000" : (obj.speed === undefined) ? "+=1250" : "+=500";
@@ -213,6 +233,22 @@ export default function createdScrollTrigger() {
             path: '/Images/LogoLottie.json',
             duration: 1,
         })
+
+
+        const navContents = document.querySelectorAll('.nav-ol');
+        if(navContents) {
+            const navContentsTL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: navContents,
+                    start: 'top',
+                    end: 'bottom',
+                    toggleActions: "play none none reverse",
+                }
+            })
+
+            navContentsTL.from(navContents, {yPercent: 0, opacity: 1}),
+            navContentsTL.to(navContents, {yPercent: -100, opacity: 0})
+        }
     })
 
 

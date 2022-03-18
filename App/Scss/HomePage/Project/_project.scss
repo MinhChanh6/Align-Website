@@ -27,14 +27,13 @@
         transition: all .3s cubic-bezier(0.45, 0.37, 0.39, 1.03);
         background-color: $yellow;
         z-index: 20;
-        // transform: scaleX(0);
 
         &__wrap {
             padding-left: 10%;
             padding-top: 10%;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 15%);
+            height: calc(100% - 10%);
         }
 
         &__field {
