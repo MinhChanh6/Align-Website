@@ -43,4 +43,10 @@ window.addEventListener('DOMContentLoaded', () => {
     createSwiper();
     SmtpMail();
     new Canvas().init();
+
+    var cssLink = document.createElement("link");
+    cssLink.href = "style.css";
+    cssLink.rel = "stylesheet";
+    cssLink.type = "text/css";
+    frames['frame1'].document.body.appendChild(cssLink);
 });

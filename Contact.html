@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./App/Css/iframe.css">
     <link rel="shortcut icon" href="/Images/ShortCut.png" />
 </head>
 
@@ -132,7 +133,10 @@
                     <div class="contact-heading">
                         Ready to start? Tell us about the challenge and we’ll talk soon.
                     </div>
-                    <form onsubmit="return false" id="contact-form">
+                    <iframe class="frame1" src="https://crm.alignlab.com/forms/wtl/a1d749a9c2f24a745977384cbdb51132"
+                        frameborder="0" sandbox="allow-top-navigation allow-scripts allow-forms allow-same-origin"
+                        allowfullscreen></iframe>
+                    <!-- <form onsubmit="return false" id="contact-form">
                         <div class="contact-tags">
                             <div class="contact-title">
                                 What you need:
@@ -145,7 +149,7 @@
                                         Choose tags is required
                                     </div>
                                 </li>
-                                
+
                                 <li class="contact-checkbox__group checkbox-mb">
                                     <input type="checkbox" id="brading" class="cb-type" value="Brading" required>
                                     <label for="brading">Branding</label>
@@ -162,7 +166,7 @@
                             </div>
                             <div class="contact-cv__name contact-input">
                                 <input type="text" name="Name" id="name" placeholder="Your name *">
-                                
+
                             </div>
                             <div class="contact-cv__company contact-input">
                                 <input type="text" name="Company" id="company" placeholder="Company *" required>
@@ -175,14 +179,14 @@
                             <div class="contact-cv__website contact-input">
                                 <input type="text" name="Website" id="Website" placeholder="Website (Optional)"
                                     required>
-                                    <div class="input-error">
-                                    </div>
+                                <div class="input-error">
+                                </div>
                             </div>
                             <div class="contact-input">
                                 <textarea name="Tell us" id="message"
                                     placeholder="Tell us more about your project *"></textarea>
-                                    <div class="input-error">
-                                    </div>
+                                <div class="input-error">
+                                </div>
                             </div>
                             <div class="contact-cv__attachment contact-input">
                                 <div>
@@ -244,7 +248,7 @@
                         <div class="contact-button">
                             Send
                         </div>
-                    </form>
+                    </form> -->
 
                 </div>
             </section>
@@ -340,23 +344,23 @@
                                 </div>
                             </div>
                             <form
-                            action="https://align.us14.list-manage.com/subscribe/post?u=5c43dcc9081fb93efbefd4d66&amp;id=f3ae99ddbd"
-                            method="post" id="mc-embedded-subscribe-form" class="validate footer-form" target="_blank"
-                            novalidate>
-                            <input type="email" placeholder="Add your email address" name="EMAIL" id="mce-EMAIL">
-                            <a onclick="document.getElementById('mc-embedded-subscribe-form').submit()"
-                                class="hide-cursor" id="circle-footer" value="Subscribe">
-                                <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
-                                        stroke="black" stroke-width="1.12442" stroke-linecap="round"
-                                        id="arrow-footer" />
-                                    <path
-                                        d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
-                                        stroke="black" stroke-width="1.12442" stroke-linecap="round"
-                                        id="arrow-footer__clone" />
-                                </svg>
-                            </a>
+                                action="https://align.us14.list-manage.com/subscribe/post?u=5c43dcc9081fb93efbefd4d66&amp;id=f3ae99ddbd"
+                                method="post" id="mc-embedded-subscribe-form" class="validate footer-form"
+                                target="_blank" novalidate>
+                                <input type="email" placeholder="Add your email address" name="EMAIL" id="mce-EMAIL">
+                                <a onclick="document.getElementById('mc-embedded-subscribe-form').submit()"
+                                    class="hide-cursor" id="circle-footer" value="Subscribe">
+                                    <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
+                                            stroke="black" stroke-width="1.12442" stroke-linecap="round"
+                                            id="arrow-footer" />
+                                        <path
+                                            d="M16.673 16.4019H32.3976M32.3976 16.4019V32.1266M32.3976 16.4019L16.673 32.1266"
+                                            stroke="black" stroke-width="1.12442" stroke-linecap="round"
+                                            id="arrow-footer__clone" />
+                                    </svg>
+                                </a>
                             </form>
                         </div>
                     </div>
@@ -368,7 +372,7 @@
     <!-- Mailchimp -->
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
     <script type='text/javascript'>
-        (function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email';}(jQuery)); var $mcj = jQuery.noConflict(true);
+        (function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; }(jQuery)); var $mcj = jQuery.noConflict(true);
     </script>
     <!-- Locomotive JS -->
     <script src="/App/Js/Locomotive/index.js"></script>

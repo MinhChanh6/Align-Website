@@ -179,7 +179,7 @@ export default function createdScrollTrigger() {
 
         // Lottie animation 
         const lottieLogo = document.getElementById('lottie');
-
+        const navContents = document.querySelectorAll('.nav-ol');
 
         const ScrollLottie = (obj) => {
 
@@ -191,40 +191,53 @@ export default function createdScrollTrigger() {
                 path: obj.path
             });
 
-            // const directionMenu = 1;
-            // lottieLogo.addEventListener('mouseenter', (e) => {
-            //     anim.setDirection(-directionMenu);
-            //     anim.play();
-            // });
-
-            // lottieLogo.addEventListener('mouseleave', (e) => {
-            //     anim.setDirection(directionMenu);
-            //     anim.play();
-            // });
 
             let timeObj = { currentFrame: 0 }
             let endString = (obj.speed === "slow") ? "+=2000" : (obj.speed === "medium") ? "+=1000" : (obj.speed === undefined) ? "+=1250" : "+=500";
-            ScrollTrigger.create({
-                trigger: obj.target,
-                scrub: true,
-                start: "top",
-                end: "+=500",
-                onUpdate: self => {
-                    if (obj.duration) {
-                        gsap.to(timeObj, {
-                            duration: obj.duration,
-                            currentFrame: (Math.floor(self.progress * (anim.totalFrames))),
-                            onUpdate: () => {
-                                anim.goToAndStop(timeObj.currentFrame, true)
-                            },
-                            ease: 'expo'
-                        })
-                    } else {
-                        anim.goToAndStop(self.progress * (anim.totalFrames), true)
+            // ScrollTrigger.create({
+            //     trigger: obj.target,
+            //     scrub: true,
+            //     start: "top",
+            //     end: "+=500",
+            //     onUpdate: self => {
+            //         if (obj.duration) {
+            //             gsap.to(timeObj, {
+            //                 duration: obj.duration,
+            //                 currentFrame: (Math.floor(self.progress * (anim.totalFrames))),
+            //                 onUpdate: () => {
+            //                     anim.goToAndStop(timeObj.currentFrame, true)
+            //                 },
+            //                 ease: 'expo'
+            //             })
+            //         } else {
+            //             anim.goToAndStop(self.progress * (anim.totalFrames), true)
+            //         }
+            //     }
+            // });
+            const lottieTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: obj.target,
+                    scrub: true,
+                    start: "top",
+                    end: "+=500",
+                    onUpdate: self => {
+                        if (obj.duration) {
+                            gsap.to(timeObj, {
+                                duration: obj.duration,
+                                currentFrame: (Math.floor(self.progress * (anim.totalFrames))),
+                                onUpdate: () => {
+                                    anim.goToAndStop(timeObj.currentFrame, true)
+                                },
+                                ease: 'expo'
+                            })
+                        } else {
+                            anim.goToAndStop(self.progress * (anim.totalFrames), true)
+                        }
                     }
                 }
-            });
-
+            })
+            lottieTimeline.from(navContents, {yPercent: 0}),
+            lottieTimeline.to(navContents, {yPercent: -1000})
         }
 
 
@@ -235,20 +248,20 @@ export default function createdScrollTrigger() {
         })
 
 
-        const navContents = document.querySelectorAll('.nav-ol');
-        if(navContents) {
-            const navContentsTL = gsap.timeline({
-                scrollTrigger: {
-                    trigger: navContents,
-                    start: 'top',
-                    end: 'bottom',
-                    toggleActions: "play none none reverse",
-                }
-            })
+        
+        // if(navContents) {
+        //     const navContentsTL = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: navContents,
+        //             start: 'top',
+        //             end: 'bottom',
+        //             toggleActions: "play none none reverse",
+        //         }
+        //     })
 
-            navContentsTL.from(navContents, {yPercent: 0, opacity: 1}),
-            navContentsTL.to(navContents, {yPercent: -100, opacity: 0})
-        }
+        //     navContentsTL.from(navContents, {yPercent: 0, opacity: 1}),
+        //     navContentsTL.to(navContents, {yPercent: -500, opacity: 0})
+        // }
     })
 
 
